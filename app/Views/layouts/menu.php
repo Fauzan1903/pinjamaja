@@ -11,13 +11,13 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/users') ?>">
-            <i class="bi bi-people"></i> <span>Users</span>
+            <i class="bi bi-person"></i> <span>Users</span>
         </a>
     </li>
     <?php $idu = session('id_user'); ?>
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('users/edit/' . $idu) ?>">
-            <i class="bi bi-person-gear"></i> <span>Setting</span>
+            <i class="bi bi-gear"></i> <span>Setting</span>
         </a>
     </li>
     <li class="nav-item">

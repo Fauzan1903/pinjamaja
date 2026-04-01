@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> PinjaminAja </title>
+    <title> PinjaminAja</title>
+
 
     <!-- Bootstrap CSS Lokal -->
     <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -26,7 +27,7 @@
         .content {
             flex-grow: 1;
             padding: 15px;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
         }
     </style>
 </head>
