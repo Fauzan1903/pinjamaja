@@ -123,3 +123,1409 @@ DEBUG - 2026-04-02 01:50:28 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-04-02 01:50:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-04-02 01:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-04-02 01:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 03:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:15:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:15:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:16:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:16:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:17:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:18:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('/alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('/alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:19:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('/alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('/alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:19:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('/alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('/alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:19:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/alat.php"
+[Method: GET, Route: alat]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/alat.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('/alat', [], true)
+ 3 APPPATH\Controllers\Alat.php(12): view('/alat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-04-02 04:22:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1 in C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php\r\n\r\nname...', 0)
+#1 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php\r\n\r\nname...')
+#2 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php\r\n\r\nname...')
+#3 C:\xampp\htdocs\pinjamaja\app\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php\r\n\r\nname...')
+#4 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(933): App\Controllers\Alat->index()
+#5 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+#6 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pinjamaja\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pinjamaja\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\pinjamaja\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-04-02 04:22:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+[Method: GET, Route: alat]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:22:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:22:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:22:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-02 04:22:54 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1 in C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php\r\n\r\nname...', 0)
+#1 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php\r\n\r\nname...')
+#2 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php\r\n\r\nname...')
+#3 C:\xampp\htdocs\pinjamaja\app\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php\r\n\r\nname...')
+#4 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(933): App\Controllers\Alat->index()
+#5 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+#6 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pinjamaja\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pinjamaja\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\pinjamaja\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-04-02 04:22:54 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+[Method: GET, Route: alat]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:22:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:22:54 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-04-02 04:24:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1 in C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\pinjamaja\system\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php\r\n\r\nname...', 0)
+#1 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php\r\n\r\nname...')
+#2 C:\xampp\htdocs\pinjamaja\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php\r\n\r\nname...')
+#3 C:\xampp\htdocs\pinjamaja\app\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php\r\n\r\nname...')
+#4 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(933): App\Controllers\Alat->index()
+#5 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+#6 C:\xampp\htdocs\pinjamaja\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pinjamaja\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pinjamaja\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\pinjamaja\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-04-02 04:24:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+[Method: GET, Route: alat]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:24:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:24:12 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SE<?php
+
+namespace App\Controllers;
+
+class Alat extends BaseController
+{...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 4 APPPATH\Controllers\Alat.php(10): CodeIgniter\Database\BaseConnection->query('SE<?php
+
+namespace App\\Controllers;
+
+class Alat extends BaseController
+{
+    public function index()
+    {
+        return view(\'alat/index\');
+    }
+    public function data()
+    {
+        return view(\'alat/data\');
+    }
+
+    public function tambah()
+    {
+        return view(\'alat/tambah\');
+    }
+
+    public function peminjaman()
+    {
+        return view(\'alat/peminjaman\');
+    }
+
+    public function laporan()
+    {
+        return view(\'alat/laporan\');
+    }
+}LECT * FROM alat')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Alat->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alat))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:25:22 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\Alat.php on line 12.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\alat.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\alat')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\alat')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\alat', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:25:45 --> ParseError: syntax error, unexpected token "{", expecting "function" or "const"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\Alat.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\alat.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\alat')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\alat')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\alat', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:25:54 --> ParseError: syntax error, unexpected variable "$db", expecting "function" or "const"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\Alat.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\alat.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\alat')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\alat')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\alat', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:26:03 --> ParseError: syntax error, unexpected variable "$data", expecting "function" or "const"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\Alat.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\alat.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\alat')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\alat')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\alat', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:30:42 --> ErrorException: Undefined variable $a
+[Method: GET, Route: alat]
+in APPPATH\Views\alat\index.php on line 34.
+ 1 APPPATH\Views\alat\index.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'C:\\xampp\\htdocs\\pinjamaja\\app\\Views\\alat\\index.php', 34)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\pinjamaja\\app\\Views\\alat\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat/index', [], true)
+ 5 APPPATH\Controllers\AlatController.php(14): view('alat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:32:18 --> ParseError: syntax error, unexpected token "return", expecting ";" or "{"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\AlatController.php on line 19.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\AlatController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AlatController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AlatController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\AlatController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:36:33 --> Error: Class "App\Models\AlatModel" not found
+[Method: GET, Route: alat]
+in APPPATH\Controllers\AlatController.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:36:52 --> Error: Class "App\Models\AlatModel" not found
+[Method: GET, Route: alat]
+in APPPATH\Controllers\AlatController.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:38:12 --> ParseError: syntax error, unexpected token "<", expecting "function" or "const"
+[Method: GET, Route: alat]
+in APPPATH\Models\AlatModel.php on line 17.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Models\\AlatModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\AlatModel')
+ 3 APPPATH\Controllers\AlatController.php(11): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\AlatModel')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:38:44 --> ParseError: syntax error, unexpected token "<", expecting end of file
+[Method: GET, Route: alat]
+in APPPATH\Models\AlatModel.php on line 18.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Models\\AlatModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\AlatModel')
+ 3 APPPATH\Controllers\AlatController.php(11): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\AlatModel')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 04:45:06 --> ErrorException: Undefined variable $a
+[Method: GET, Route: alat]
+in APPPATH\Views\alat\index.php on line 42.
+ 1 APPPATH\Views\alat\index.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'C:\\xampp\\htdocs\\pinjamaja\\app\\Views\\alat\\index.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\pinjamaja\\app\\Views\\alat\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('alat/index', [], true)
+ 5 APPPATH\Controllers\AlatController.php(14): view('alat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlatController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlatController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:49:17 --> ParseError: syntax error, unexpected variable "$model", expecting ";" or "{"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\AlatController.php on line 19.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\AlatController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AlatController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AlatController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\AlatController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 04:49:53 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: alat]
+in APPPATH\Controllers\AlatController.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\AlatController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AlatController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AlatController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\AlatController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 04:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 04:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 05:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-02 05:12:54 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: alat/tambah]
+in APPPATH\Controllers\AlatController.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\pinjamaja\\app\\Controllers\\AlatController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AlatController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AlatController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\AlatController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-04-02 06:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-02 06:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

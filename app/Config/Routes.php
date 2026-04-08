@@ -29,9 +29,18 @@ $routes->post('/users/store', 'Users::store'); // aksi simpan user
 
 // Tambahan untuk menampilkan data user, form edit, aksi update, dan hapus user
 $routes->get('/users', 'Users::index', $allRole); // menampilkan data user
-$routes->get('/users/edit/(:num)', 'Users::edit/$1', $allRole); // form edit user
+$routes->get('/users/edit/(:num)', 'Users::edit/$1', $admin); // form edit user
 $routes->post('/users/update/(:num)', 'Users::update/$1', $allRole); // aksi update user
-$routes->get('/users/delete/(:num)', 'Users::delete/$1', $allRole); // aksi hapus user
+$routes->get('/users/delete/(:num)', 'Users::delete/$1', $admin); // aksi hapus user
 
 //Menu alat
-$routes->get('/Alat', 'alat::index', $allRole); // aksi ke menu alat
+$routes->get('/alat', 'AlatController::index'); // aksi ke menu alat
+$routes->get('/alat', 'AlatController::index');
+$routes->get('/alat/tambah', 'AlatController::tambah');
+$routes->post('/alat/simpan', 'AlatController::simpan');
+$routes->get('/alat/delete/(:num)', 'SimpanController::delete/$1', $admin); // aksi hapus alat
+
+//peminjaman
+$routes->get('/pinjam/(:num)', 'PinjamController::form/$1');
+$routes->post('/pinjam/simpan', 'PinjamController::simpan');
+$routes->post('/alat/simpan', 'AlatController::simpan');
