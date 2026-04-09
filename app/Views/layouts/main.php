@@ -19,7 +19,7 @@
         }
 
         .sidebar {
-            width: 150px;
+            width: 200px;
             background-color: #fffbd5ff;
             position: relative;
         }

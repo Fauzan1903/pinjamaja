@@ -17,13 +17,23 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/alat') ?>">
-            <i class="bi bi-tools"></i> <span>Alat</span>
+        <a class="nav-link" href="<?= base_url('/users') ?>">
+            <i class="bi bi-person"></i> <span>User</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/users') ?>">
-            <i class="bi bi-person"></i> <span>Users</span>
+        <a class="nav-link" href="<?= base_url('/alat') ?>">
+            <i class="bi bi-tools"></i><span>Alat</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/pengembalian') ?>">
+            <i class="bi bi-rewind-btn"></i> <span>Pengembalian</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/') ?>">
+            <i class="bi bi-gear-wide-connected"></i></i> <span>Setting</span>
         </a>
     </li>
     <?php $idu = session('id_user'); ?>

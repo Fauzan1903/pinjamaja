@@ -34,11 +34,13 @@
                     <td><?= $p['data_dikembalikan'] ?></td>
                     <td><?= $p['status'] ?></td>
                     <td>
-                        <a href="<?= base_url('pengembalian/kembalikan/' . $p['id_peminjam']) ?>"
-                            class="btn btn-success btn-sm"
-                            onclick="return confirm('Kembalikan alat ini?')">
-                            Kembalikan
-                        </a>
+                        <?php if (session()->get('role') == 'user'): ?>
+                            <a href="<?= base_url('pengembalian/kembalikan/' . $p['id_peminjam']) ?>"
+                                class="btn btn-success btn-sm"
+                                onclick="return confirm('Kembalikan alat ini?')">
+                                Kembalikan
+                            </a>
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
