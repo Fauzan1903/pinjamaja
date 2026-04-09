@@ -28,6 +28,7 @@ class SimpanController extends BaseController
     public function simpan()
     {
         $rules = [
+            'id_alat'   => 'required|integer',
             'nama_alat'  => 'required|max_length[100]',
             'deskripsi'  => 'permit_empty|string',
             'persediaan' => 'required|integer|greater_than_equal_to[0]',
@@ -38,6 +39,7 @@ class SimpanController extends BaseController
         }
 
         $this->simpanModel->save([
+            'id_alat'   => $this->request->getPost('id_alat'),
             'nama_alat'  => $this->request->getPost('nama_alat'),
             'deskripsi'  => $this->request->getPost('deskripsi'),
             'persediaan' => $this->request->getPost('persediaan'),
@@ -66,6 +68,7 @@ class SimpanController extends BaseController
         }
 
         $rules = [
+            'id_alat'   => 'required|integer',
             'nama_alat'  => 'required|max_length[100]',
             'deskripsi'  => 'permit_empty|string',
             'persediaan' => 'required|integer|greater_than_equal_to[0]',
@@ -76,6 +79,7 @@ class SimpanController extends BaseController
         }
 
         $this->simpanModel->update($id, [
+            'id_alat'   => $this->request->getPost('id_alat'),
             'nama_alat'  => $this->request->getPost('nama_alat'),
             'deskripsi'  => $this->request->getPost('deskripsi'),
             'persediaan' => $this->request->getPost('persediaan'),

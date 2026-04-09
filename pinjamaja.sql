@@ -43,6 +43,8 @@ CREATE TABLE `alat` (
 CREATE TABLE `peminjaman` (
   `id_peminjam` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
+  `id_alat` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
   `data_peminjam` date NOT NULL,
   `data_dikembalikan` date NOT NULL,
   `status` enum('ditunda','disetujui','ditolak','dipinjam','dikembalikan') DEFAULT 'ditunda'

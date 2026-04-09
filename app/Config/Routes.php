@@ -35,12 +35,20 @@ $routes->get('/users/delete/(:num)', 'Users::delete/$1', $admin); // aksi hapus 
 
 //Menu alat
 $routes->get('/alat', 'AlatController::index'); // aksi ke menu alat
-$routes->get('/alat', 'AlatController::index');
+$routes->get('/alat/delete/(:num)', 'SimpanController::delete/$1', $admin); // aksi hapus alat
+$routes->get('/alat/edit/(:num)', 'AlatController::edit/$1', $admin); // form edit alat
+$routes->post('/alat/update', 'AlatController::update'); // aksi update alat
+$routes->post('/alat/update/(:num)', 'SimpanController::update/$1', $admin); // aksi update alat
 $routes->get('/alat/tambah', 'AlatController::tambah');
 $routes->post('/alat/simpan', 'AlatController::simpan');
-$routes->get('/alat/delete/(:num)', 'SimpanController::delete/$1', $admin); // aksi hapus alat
+
 
 //peminjaman
 $routes->get('/pinjam/(:num)', 'PinjamController::form/$1');
 $routes->post('/pinjam/simpan', 'PinjamController::simpan');
 $routes->post('/alat/simpan', 'AlatController::simpan');
+
+// pengembalian
+$routes->get('/pengembalian', 'PengembalianController::index');
+$routes->get('/pengembalian/kembalikan/(:num)', 'PengembalianController::kembalikan/$1');
+$routes->get('/riwayat', 'PengembalianController::riwayat');

@@ -45,8 +45,6 @@
                         <?php if (session()->get('role') == 'admin') : ?>
                             <td class="text-center">
 
-
-
                                 <a href="<?= base_url('alat/edit/' . $a['id_alat']) ?>" class="btn btn-warning btn-sm">
                                     Edit
                                 </a>

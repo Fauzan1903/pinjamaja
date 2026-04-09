@@ -8,20 +8,20 @@ use App\Models\PeminjamanModel;
 
 class PinjamController extends BaseController
 {
-    protected AlatModel $alatModel;
-    protected UsersModel $usersModel;
-    protected PeminjamanModel $peminjamanModel;
+    protected AlatModel $AlatModel;
+    protected UsersModel $UsersModel;
+    protected PeminjamanModel $PeminjamanModel;
 
     public function __construct()
     {
-        $this->alatModel = new AlatModel();
-        $this->usersModel = new UsersModel();
-        $this->peminjamanModel = new PeminjamanModel();
+        $this->AlatModel = new AlatModel();
+        $this->UsersModel = new UsersModel();
+        $this->PeminjamanModel = new PeminjamanModel();
     }
 
     public function form(int $id)
     {
-        $alat = $this->alatModel->find($id);
+        $alat = $this->AlatModel->find($id);
 
         if (!$alat) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Alat tidak ditemukan.');
@@ -34,43 +34,75 @@ class PinjamController extends BaseController
     {
         $rules = [
             'id_alat' => 'required|integer',
-            'nama' => 'required|max_length[30]',
+            'nama' => 'required|max_length[100]',
+            'jumlah' => 'required|integer|greater_than[0]',
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('error', implode(', ', $this->validator->getErrors()));
         }
 
-        // Simpan peminjaman ke database
-        $data = [
-            'id_alat' => $this->request->getPost('id_alat'),
-            'nama_peminjam' => $this->request->getPost('nama'),
-            'data_peminjam' => date('Y-m-d'),
-            'data_dikembalikan' => date('Y-m-d', strtotime('+7 days')), // Asumsikan 7 hari
-            'status' => 'ditunda'
-        ];
+        $id_alat = (int) $this->request->getPost('id_alat');
+        $jumlah = (int) $this->request->getPost('jumlah');
+        $nama = $this->request->getPost('nama');
 
-        $this->peminjamanModel->save($data);
-        // 🔥 VALIDASI STOK
-        if ($alat['persediaan']) {
-            return redirect()->back()->with('error', 'Stok tidak cukup!');
+        // Ambil data alat
+        $alat = $this->AlatModel->find($id_alat);
+
+        if (!$alat) {
+            return redirect()->back()->withInput()->with('error', 'Alat tidak ditemukan.');
         }
 
-        // 📊 SIMPAN PEMINJAMAN
-        $db->table('peminjaman')->insert([
+        $stokTersedia = (int) $alat['persediaan'];
+
+        // Validasi stok
+        if ($jumlah > $stokTersedia) {
+            return redirect()->back()->withInput()->with('error', 'Stok tidak cukup. Tersedia: ' . $stokTersedia . '.');
+        }
+
+        // Mulai transaksi database
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        // Simpan peminjaman
+        $peminjamanData = [
+            'id_user' => session('id_user'),
             'id_alat' => $id_alat,
-            'nama_peminjam' => $this->request->getPost('nama'),
-            'tanggal_pinjam' => date('Y-m-d')
+            'nama_peminjam' => $nama,
+            'jumlah' => $jumlah,
+            'data_peminjam' => date('Y-m-d'),
+            'data_dikembalikan' => date('Y-m-d', strtotime('+7 days')),
+            'status' => 'dipinjam',
+        ];
+
+        $inserted = $this->PeminjamanModel->insert($peminjamanData);
+
+        if ($inserted === false) {
+            $db->transRollback();
+            $errors = $this->PeminjamanModel->errors();
+            $message = $errors ? implode(' ', $errors) : 'Gagal menyimpan data peminjaman.';
+            return redirect()->back()->withInput()->with('error', $message);
+        }
+
+        // Kurangi stok alat
+        $updated = $this->AlatModel->update($id_alat, [
+            'persediaan' => $stokTersedia - $jumlah,
         ]);
 
-        // 🔥 KURANGI STOK
-        $alatModel->update($id_alat, [
-            'persediaan' => $alat['persediaan']
-        ]);
+        if ($updated === false) {
+            $db->transRollback();
+            $errors = $this->AlatModel->errors();
+            $message = $errors ? implode(' ', $errors) : 'Gagal mengurangi stok alat.';
+            return redirect()->back()->withInput()->with('error', $message);
+        }
 
-        return redirect()->to('/alat')->with('success', 'Berhasil pinjam alat');
+        $db->transComplete();
+
+        if (!$db->transStatus()) {
+            $dbError = $db->error();
+            return redirect()->back()->withInput()->with('error', $dbError['message'] ?? 'Gagal menyimpan data peminjaman.');
+        }
+
+        return redirect()->to('/alat')->with('success', 'Berhasil pinjam alat. Menunggu persetujuan.');
     }
-} {
-    // Jika ada method delete di PinjamController, tapi sepertinya ini salah
-    // Method delete seharusnya di SimpanController
 }

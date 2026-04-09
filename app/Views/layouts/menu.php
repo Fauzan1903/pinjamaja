@@ -1,7 +1,7 @@
 <ul class="nav flex-column mt-3">
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <b>PinjaminAja</b> <i class="bi bi-yelp"></i>
+            <b>PinjaminAja</b> <i class="bi bi-send"></i>
         </a>
     </li>
     <center>
@@ -11,7 +11,11 @@
         <span class="nav-link disabled">Masuk sebagai: <b><?= session('nama'); ?> (<?= session('role'); ?>)</b></span>
 
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/dashboard') ?>">
+            <i class="bi bi-house-door"></i></i> <span>Dasboard</span>
+        </a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/alat') ?>">
             <i class="bi bi-tools"></i> <span>Alat</span>
@@ -24,13 +28,9 @@
     </li>
     <?php $idu = session('id_user'); ?>
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('users/edit/' . $idu) ?>">
-            <i class="bi bi-gear"></i> <span>Setting</span>
-        </a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/logout') ?>">
             <i class="bi bi-box-arrow-left"></i> <span>Logout</span>
         </a>
     </li>
+
 </ul>
