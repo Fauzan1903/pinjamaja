@@ -25,7 +25,7 @@ class Users extends BaseController
         $validation->setRules([
             'nama'     => 'required',
             'username' => 'required|is_unique[users.username]',
-            'password' => 'required|min_length[4]',
+            'password' => 'required|min_length[6]',
             'role'     => 'required',
         ]);
 

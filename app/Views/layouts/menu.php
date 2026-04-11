@@ -1,46 +1,111 @@
-<ul class="nav flex-column mt-3">
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <b>PinjaminAja</b> <i class="bi bi-send"></i>
-        </a>
-    </li>
-    <center>
-        <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" height="50" rounded-circle" />
-    </center>
-    <li class="nav-item mt-3">
-        <span class="nav-link disabled">Masuk sebagai: <b><?= session('nama'); ?> (<?= session('role'); ?>)</b></span>
+<div id="sidebar" class="sidebar no-print">
+    <div class="p-3">
 
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/dashboard') ?>">
-            <i class="bi bi-house-door"></i></i> <span>Dasboard</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/users') ?>">
-            <i class="bi bi-person"></i> <span>User</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/alat') ?>">
-            <i class="bi bi-tools"></i><span>Alat</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/pengembalian') ?>">
-            <i class="bi bi-rewind-btn"></i> <span>Pengembalian</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/') ?>">
-            <i class="bi bi-gear-wide-connected"></i></i> <span>Setting</span>
-        </a>
-    </li>
-    <?php $idu = session('id_user'); ?>
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/logout') ?>">
-            <i class="bi bi-box-arrow-left"></i> <span>Logout</span>
-        </a>
-    </li>
 
+        <!-- LOGO -->
+        <div class="text-center mb-4">
+            <img src="<?= base_url('assets/img/Logo.png') ?>" width="60">
+            <h5>PinjaminAja</h5>
+        </div>
+
+        <div class="text-center mb-4">
+
+            <!-- FOTO USER -->
+            <div class="text-center mb-4 dropdown">
+
+                <a class="d-block text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown">
+
+                    <!-- FOTO -->
+                    <?php if (session()->get('foto')): ?>
+                        <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>"
+                            class="rounded-circle mb-2"
+                            width="70" height="70"
+                            style="object-fit: cover;">
+                    <?php else: ?>
+                        <img src="<?= base_url('assets/img/user.png') ?>"
+                            class="rounded-circle mb-2"
+                            width="60">
+                    <?php endif; ?>
+
+                    <!-- NAMA -->
+                    <div><strong><?= session()->get('nama') ?></strong></div>
+                    <small class="text-muted">Masuk sebagai: <?= session()->get('role') ?></small>
+                </a>
+
+                <!-- DROPDOWN MENU -->
+                <ul class="dropdown-menu text-center">
+                    <li>
+                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
+                            <i class="bi bi-person"></i> Profil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
+                            <i class="bi bi-key"></i> Ganti Password
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a href="<?= base_url('dashboard') ?>"
+                    class="nav-link <?= uri_string() == 'dashboard' ? 'active' : '' ?>">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('alat') ?>"
+                    class="nav-link <?= uri_string() == 'alat' ? 'active' : '' ?>">
+                    <i class="bi bi-tools"></i> <span>Data Alat</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('pengembalian') ?>"
+                    class="nav-link <?= uri_string() == 'pengembalian' ? 'active' : '' ?>">
+                    <i class="bi bi-arrow-return-left"></i> Pengembalian
+                </a>
+            </li>
+
+            <?php if (session()->get('role') == 'admin'): ?>
+                <li class="nav-item">
+                    <a href="<?= base_url('users') ?>"
+                        class="nav-link <?= uri_string() == 'users' ? 'active' : '' ?>">
+                        <i class="bi bi-people"></i> Users
+                    </a>
+                </li>
+            <?php endif; ?>
+
+            <hr>
+
+            <li class="nav-item">
+                <a href="<?= base_url('logout') ?>" class="nav-link text-danger">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("collapsed");
+    }
+</script>
 </ul>

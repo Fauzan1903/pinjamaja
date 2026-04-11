@@ -9,8 +9,9 @@
         <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
     <?php endif; ?>
 
-    <div class="mb-3">
+    <div class="input-group mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Cari user / username...">
+        <button class="btn btn-primary">Cari</button>
     </div>
 
     <table id="tableUser" class="table table-bordered table-striped">

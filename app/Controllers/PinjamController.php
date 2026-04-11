@@ -106,5 +106,10 @@ class PinjamController extends BaseController
         return redirect()->to('/alat')->with('success', 'Berhasil pinjam alat. Menunggu persetujuan.');
         $peminjamanModel->where('id_user', $id)->delete();
         $userModel->delete($id);
+        $pesan = "Ada peminjaman baru!\nAlat ID: $idAlat\nJumlah: $jumlah";
+
+        $wa = "https://wa.me/082124072012?text=" . urlencode($pesan);
+
+        return redirect()->to($wa);
     }
 }

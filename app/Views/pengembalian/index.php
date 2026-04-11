@@ -26,6 +26,7 @@
                 <th>Batas Kembali</th>
                 <th>Status</th>
                 <th>Aksi</th>
+                <th>Bagikan</th>
             </tr>
         </thead>
 
@@ -53,16 +54,51 @@
                         <!-- Tombol Hapus (admin saja) -->
                         <?php if (session()->get('role') == 'admin'): ?>
                             <a href="<?= base_url('pengembalian/delete/' . $p['id_peminjam']) ?>"
-                                class="btn btn-danger mb-3"
+                                class="btn btn-danger btn-sm"
                                 onclick="return confirm('Yakin ingin menghapus data ini?')">
                                 Hapus
                             </a>
                         <?php endif; ?>
+                    </td>
+                    <td class="text-center">
+
+                        <!-- 🔥 SHARE WHATSAPP -->
+                        <a href="https://wa.me/?text=<?= urlencode(
+                                                            'Pengembalian alat ID: ' . $p['id_alat'] .
+                                                                ' | Jumlah: ' . $p['jumlah'] .
+                                                                ' | Status: ' . $p['status']
+                                                        ) ?>"
+                            target="_blank"
+                            class="btn btn-success btn-sm">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                        <!-- 🔥 SHARE instagram -->
+                        <a href="https://www.instagram.com/sharer/sharer.php?u=<?= base_url('pengembalian') ?>"
+                            target="_blank"
+                            class="btn btn-primary btn-sm">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a>
+                            <!-- 🔥 COPY LINK -->
+                            <button onclick="copyLink('<?= base_url('pengembalian') ?>')"
+                                class="btn btn-secondary btn-sm">
+                                <i class="bi bi-link-45deg"></i>
+                            </button>
+
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
+
+<script>
+    function copyLink(link) {
+        navigator.clipboard.writeText(link);
+        alert("Link berhasil disalin!");
+    }
+</script>
 
 <?= $this->endSection() ?>

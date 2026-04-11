@@ -36,9 +36,11 @@
                 <th>Deskripsi</th>
                 <th>Stok</th>
                 <th>Aksi</th>
+                <th>Bagikan</th>
                 <?php if (session()->get('role') == '$allrole') : ?>
                     <th width="200">Aksi</th>
                 <?php endif; ?>
+
             </tr>
         </thead>
 
@@ -80,7 +82,29 @@
                                     </button>
                                 <?php endif; ?>
 
+                            <td class="text-center">
 
+                                <!-- Tombol Share WhatsApp -->
+                                <a href="https://wa.me/?text=<?= urlencode('Cek alat ini: ' . base_url('pinjam/' . $a['id_alat'])) ?>"
+                                    target="_blank"
+                                    class="btn btn-success btn-sm">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+
+                                <!-- Tombol Share Instagram -->
+                                <a href="https://www.instagram.com/sharer/sharer.php?u=<?= base_url('pinjam/' . $a['id_alat']) ?>"
+                                    target="_blank"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+
+                                <!-- Tombol Copy Link -->
+                                <button onclick="copyLink('<?= base_url('pinjam/' . $a['id_alat']) ?>')"
+                                    class="btn btn-secondary btn-sm">
+                                    <i class="bi bi-link-45deg"></i>
+                                </button>
+
+                            </td>
                             </td>
                         <?php endif; ?>
                     </tr>
@@ -95,5 +119,10 @@
     ```
 
 </div>
-
+<script>
+    function copyLink(link) {
+        navigator.clipboard.writeText(link);
+        alert("Link berhasil disalin!");
+    }
+</script>
 <?= $this->endSection() ?>

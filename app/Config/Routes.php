@@ -55,4 +55,11 @@ $routes->get('/pengembalian/delete/(:num)', 'PengembalianController::delete/$1')
 $routes->get('/riwayat', 'PengembalianController::riwayat'); //aksi riwayat pengembalian
 
 //pdf
-$routes->get('/pengembalian/export', 'PengembalianController::export');//aksi export pdf data pengembalian
+$routes->get('/pengembalian/export', 'PengembalianController::export'); //aksi export pdf data pengembalian
+
+
+// ✅ TAMBAHKAN DI SINI
+$routes->get('/profile', 'ProfileController::index');
+$routes->post('/profile/update-password', 'ProfileController::updatePassword');
+$routes->get('/profile/edit/(:num)', 'ProfileController::edit/$1');
+$routes->post('/profile/update', 'ProfileController::update');
