@@ -16,7 +16,6 @@ class AlatController extends BaseController
     public function update()
     {
         $model = new AlatModel();
-
         $id = $this->request->getPost('id_alat');
 
         $model->update($id, [
