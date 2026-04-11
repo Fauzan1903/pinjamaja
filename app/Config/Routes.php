@@ -39,16 +39,20 @@ $routes->get('/alat/delete/(:num)', 'SimpanController::delete/$1', $admin); // a
 $routes->get('/alat/edit/(:num)', 'AlatController::edit/$1', $admin); // form edit alat
 $routes->post('/alat/update', 'AlatController::update'); // aksi update alat
 $routes->post('/alat/update/(:num)', 'SimpanController::update/$1', $admin); // aksi update alat
-$routes->get('/alat/tambah', 'AlatController::tambah');
-$routes->post('/alat/simpan', 'AlatController::simpan');
+$routes->get('/alat/tambah', 'AlatController::tambah'); // form tambah alat
+$routes->post('/alat/simpan', 'AlatController::simpan'); // aksi simpan alat
 
 
 //peminjaman
-$routes->get('/pinjam/(:num)', 'PinjamController::form/$1');
-$routes->post('/pinjam/simpan', 'PinjamController::simpan');
-$routes->post('/alat/simpan', 'AlatController::simpan');
+$routes->get('/pinjam/(:num)', 'PinjamController::form/$1'); //form peminjaman
+$routes->post('/pinjam/simpan', 'PinjamController::simpan'); //aksi simpan peminjaman
+$routes->post('/alat/simpan', 'AlatController::simpan'); //aksi simpan alat
 
 // pengembalian
-$routes->get('/pengembalian', 'PengembalianController::index');
-$routes->get('/pengembalian/kembalikan/(:num)', 'PengembalianController::kembalikan/$1');
-$routes->get('/riwayat', 'PengembalianController::riwayat');
+$routes->get('/pengembalian', 'PengembalianController::index'); //aksi ke menu pengembalian
+$routes->get('/pengembalian/kembalikan/(:num)', 'PengembalianController::kembalikan/$1'); //aksi kembalikan alat
+$routes->get('/pengembalian/delete/(:num)', 'PengembalianController::delete/$1'); //aksi hapus data pengembalian
+$routes->get('/riwayat', 'PengembalianController::riwayat'); //aksi riwayat pengembalian
+
+//pdf
+$routes->get('/pengembalian/export', 'PengembalianController::export');//aksi export pdf data pengembalian

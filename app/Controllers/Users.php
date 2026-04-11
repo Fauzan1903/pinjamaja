@@ -122,4 +122,5 @@ class Users extends BaseController
         return redirect()->to('/users')->with('success', 'User berhasil dihapus!');
     }
     // sampai sini
+
 }

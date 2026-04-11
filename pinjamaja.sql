@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Apr 2026 pada 04.16
+-- Waktu pembuatan: 11 Apr 2026 pada 08.48
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -31,7 +31,33 @@ CREATE TABLE `alat` (
   `id_alat` int(11) NOT NULL,
   `nama_alat` varchar(100) NOT NULL,
   `deskripsi` text DEFAULT NULL,
-  `persediaan` int(11) NOT NULL
+  `persediaan` int(11) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `alat`
+--
+
+INSERT INTO `alat` (`id_alat`, `nama_alat`, `deskripsi`, `persediaan`, `foto`) VALUES
+(33, 'sapu lidi', 'y7i', 10, NULL),
+(34, 'pistol', 'tyiygi', 10, NULL),
+(35, 'pistol', 'rrr', 15, NULL),
+(36, 'sapu', 'rt', 46, NULL),
+(37, 'ry', 'ery', 55, NULL),
+(38, 'pengki', 'e', 1010, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `denda`
+--
+
+CREATE TABLE `denda` (
+  `id_denda` int(11) NOT NULL,
+  `id_alat` int(11) NOT NULL,
+  `id_peminjam` int(11) NOT NULL,
+  `denda` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,10 +70,25 @@ CREATE TABLE `peminjaman` (
   `id_peminjam` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
   `id_alat` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
+  `nama_peminjam` varchar(50) NOT NULL,
+  `jumlah` int(255) NOT NULL,
   `data_peminjam` date NOT NULL,
   `data_dikembalikan` date NOT NULL,
-  `status` enum('ditunda','disetujui','ditolak','dipinjam','dikembalikan') DEFAULT 'ditunda'
+  `status` enum('ditunda','disetujui','ditolak','dipinjam','dikembalikan') DEFAULT 'ditunda',
+  `denda` int(11) DEFAULT 11
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengembalian`
+--
+
+CREATE TABLE `pengembalian` (
+  `id_pengembalian` int(11) NOT NULL,
+  `id_peminjam` int(11) NOT NULL,
+  `id_alat` int(11) NOT NULL,
+  `id_denda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,7 +98,7 @@ CREATE TABLE `peminjaman` (
 --
 
 CREATE TABLE `users` (
-  `id_user` int(10) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `role` enum('admin','user') NOT NULL DEFAULT 'user',
@@ -71,8 +112,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `nama`, `username`, `role`, `password`, `foto`) VALUES
 (1, 'admin', 'admin', 'admin', '$2y$10$FMQRdH0ecCbZZVWtN2n7/u1YZN/gr7X98Er4NG4sqDAWCXlZwmB6S', '1775093371_d8d64708445a90577d1e.jpg'),
-(2, 'user', 'user', 'user', '$2y$10$FMQRdH0ecCbZZVWtN2n7/u1YZN/gr7X98Er4NG4sqDAWCXlZwmB6S', NULL),
-(3, 'usro', 'usro', 'admin', '$2y$10$IDSFvWRC7wLxyEivwRCLFeTg3IAcWOC5CB7FsOh5yU4eHAokvlDpG', NULL);
+(2, 'user', 'user', 'user', '$2y$10$FMQRdH0ecCbZZVWtN2n7/u1YZN/gr7X98Er4NG4sqDAWCXlZwmB6S', '1775878386_a4b7c7efead014e5f375.png'),
+(3, 'usro', 'usro', 'admin', '$2y$10$IDSFvWRC7wLxyEivwRCLFeTg3IAcWOC5CB7FsOh5yU4eHAokvlDpG', '1775106600_fef3ea639186cd585f99.jpg');
 
 --
 -- Indexes for dumped tables
@@ -85,11 +126,23 @@ ALTER TABLE `alat`
   ADD PRIMARY KEY (`id_alat`);
 
 --
+-- Indeks untuk tabel `denda`
+--
+ALTER TABLE `denda`
+  ADD PRIMARY KEY (`id_denda`);
+
+--
 -- Indeks untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_peminjam`),
-  ADD KEY `user_id` (`id_user`);
+  ADD KEY `peminjaman_ibfk_1` (`id_user`);
+
+--
+-- Indeks untuk tabel `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  ADD PRIMARY KEY (`id_pengembalian`);
 
 --
 -- Indeks untuk tabel `users`
@@ -106,19 +159,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `id_alat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT untuk tabel `denda`
+--
+ALTER TABLE `denda`
+  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  MODIFY `id_pengembalian` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -128,7 +193,7 @@ ALTER TABLE `users`
 -- Ketidakleluasaan untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

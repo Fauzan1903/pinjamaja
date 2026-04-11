@@ -9,13 +9,24 @@ class AlatController extends BaseController
     public function index()
     {
         $model = new AlatModel();
-        $data['alat'] = $model->findAll();
+
+        $keyword = $this->request->getGet('keyword');
+
+        if ($keyword) {
+            $data['alat'] = $model
+                ->like('nama_alat', $keyword)
+                ->orLike('deskripsi', $keyword)
+                ->findAll();
+        } else {
+            $data['alat'] = $model->findAll();
+        }
 
         return view('alat/index', $data);
     }
     public function update()
     {
         $model = new AlatModel();
+
         $id = $this->request->getPost('id_alat');
 
         $model->update($id, [

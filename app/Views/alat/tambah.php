@@ -10,7 +10,6 @@
     <?php if (session()->getFlashdata('error')): ?>
         <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
     <?php endif; ?>
-
     <form action="<?= base_url('alat/simpan') ?>" method="post">
         <form action="<?= base_url('alat/edit') ?>" method="post">
             <?= csrf_field(); ?>
@@ -24,7 +23,6 @@
                 <label class="form-label">Deskripsi</label>
                 <textarea name="deskripsi" class="form-control" rows="3"></textarea>
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Stok</label>
                 <input type="number" name="persediaan" class="form-control" required>

@@ -21,8 +21,7 @@
             <div>
                 <label>Deskripsi</label><br>
                 <textarea name="deskripsi"><?= $alat['deskripsi']; ?></textarea>
-            </div>
-
+            </div>>
             <div>
                 <label>Stok</label><br>
                 <input type="number" name="persediaan" value="<?= $alat['persediaan']; ?>">

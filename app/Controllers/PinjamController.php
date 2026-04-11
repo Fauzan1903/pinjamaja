@@ -104,5 +104,7 @@ class PinjamController extends BaseController
         }
 
         return redirect()->to('/alat')->with('success', 'Berhasil pinjam alat. Menunggu persetujuan.');
+        $peminjamanModel->where('id_user', $id)->delete();
+        $userModel->delete($id);
     }
 }

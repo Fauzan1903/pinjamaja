@@ -9,7 +9,11 @@
         <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
     <?php endif; ?>
 
-    <table class="table table-bordered table-striped">
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Cari user / username...">
+    </div>
+
+    <table id="tableUser" class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr class="text-center">
                 <th width="50">No</th>
@@ -24,7 +28,7 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="tableUser">
             <?php if (!empty($users)): ?>
                 <?php $no = 1;
                 foreach ($users as $u): ?>
@@ -35,7 +39,7 @@
                         <td><?= ucfirst($u['role']) ?></td>
                         <td class="text-center">
                             <?php if ($u['foto']): ?>
-                                <img src="<?= base_url('uploads/users/' . $u['foto']) ?>" width="60" class="rounded">
+                                <img src="<?= base_url('uploads/users/' . $u['foto']) ?>" width="50" class="rounded" />
                             <?php else: ?>
                                 <span class="text-muted">-</span>
                             <?php endif; ?>
@@ -66,4 +70,20 @@
     </table>
 
 </div>
+<script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let keyword = this.value.toLowerCase();
+        let rows = document.querySelectorAll('#tableUser tr');
+
+        rows.forEach(function(row) {
+            let text = row.innerText.toLowerCase();
+
+            if (text.includes(keyword)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
 <?= $this->endSection() ?>

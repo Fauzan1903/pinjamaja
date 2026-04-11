@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
     <title> PinjaminAja</title>
 
 
@@ -34,7 +35,7 @@
 
 <body>
     <!-- Sidebar -->
-    <div id="sidebar" class="sidebar">
+    <div id="sidebar" class="sidebar no-print">
         <?php include(APPPATH . 'Views/layouts/menu.php'); ?>
     </div>
 

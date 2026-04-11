@@ -16,8 +16,19 @@
             + Tambah Alat
         </a>
     <?php endif; ?>
+    <td>
 
-    <table class="table table-bordered table-striped">
+
+    </td>
+    <form method="get" class="mb-3">
+    </form>
+    <form method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="keyword" class="form-control" placeholder="Cari nama alat..." value="<?= $_GET['keyword'] ?? '' ?>">
+            <button class="btn btn-primary">Cari</button>
+        </div>
+    </form>
+    <table id="tableAlat" class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr class="text-center">
                 <th width="50">No</th>
@@ -41,7 +52,6 @@
                         <td><?= $a['nama_alat'] ?></td>
                         <td><?= $a['deskripsi'] ?></td>
                         <td class="text-center"><?= $a['persediaan'] ?></td>
-
                         <?php if (session()->get('role') == 'admin') : ?>
                             <td class="text-center">
 

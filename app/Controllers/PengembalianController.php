@@ -19,53 +19,69 @@ class PengembalianController extends BaseController
     // 📊 Halaman riwayat peminjaman
     public function index()
     {
-        $data['peminjaman'] = $this->peminjamanModel
-            ->where('status', 'dipinjam')
-            ->findAll();
+        $keyword = $this->request->getGet('keyword');
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('peminjaman')
+            ->select('peminjaman.*, users.nama as nama_user, alat.nama_alat')
+            ->join('users', 'users.id_user = peminjaman.id_user', 'left')
+            ->join('alat', 'alat.id_alat = peminjaman.id_alat', 'left');
+
+        if ($keyword) {
+            $builder->groupStart()
+                ->like('users.nama', $keyword)
+                ->orLike('alat.nama_alat', $keyword)
+                ->groupEnd();
+        }
+
+        $data['peminjaman'] = $builder->get()->getResultArray();
 
         return view('pengembalian/index', $data);
     }
-    public function riwayat()
-    {
-        $data['riwayat'] = $this->peminjamanModel->findAll();
 
-        return view('pengembalian/riwayat', $data);
-    }
-
-    // 🔄 Proses pengembalian
+    // ✅ Proses pengembalian alat
     public function kembalikan($id)
     {
-        $pinjam = $this->peminjamanModel->find($id);
+        $peminjaman = $this->peminjamanModel->find($id);
 
-        if (!$pinjam) {
-            return redirect()->back()->with('error', 'Data tidak ditemukan');
+        if (!$peminjaman) {
+            return redirect()->back()->with('error', 'Data peminjaman tidak ditemukan.');
         }
 
-        $alat = $this->alatModel->find($pinjam['id_alat']);
+        // Update status peminjaman menjadi 'dikembalikan'
+        $this->peminjamanModel->update($id, ['status' => 'dikembalikan']);
 
-        // 📅 Hitung denda
-        $hariIni = date('Y-m-d');
-        $tanggalKembali = $pinjam['data_dikembalikan'];
+        // Update stok alat
+        $alat = $this->alatModel->find($peminjaman['id_alat']);
+        if ($alat) {
+            $stokBaru = (int) $alat['persediaan'] + (int) $peminjaman['jumlah'];
+            $this->alatModel->update($peminjaman['id_alat'], ['persediaan' => $stokBaru]);
+        }
+        return redirect()->back()->with('success', 'Alat berhasil dikembalikan.');
+    }
+    public function export()
+    {
+        $db = \Config\Database::connect();
 
-        $denda = 0;
+        $data['peminjaman'] = $db->table('peminjaman')
+            ->select('peminjaman.*, alat.nama_alat, users.nama as nama_user')
+            ->join('alat', 'alat.id_alat = peminjaman.id_alat', 'left')
+            ->join('users', 'users.id_user = peminjaman.id_user', 'left')
+            ->orderBy('peminjaman.id_peminjam', 'DESC')
+            ->get()
+            ->getResultArray();
 
-        if ($hariIni > $tanggalKembali) {
-            $selisih = (strtotime($hariIni) - strtotime($tanggalKembali)) / (60 * 60 * 24);
-            $denda = $selisih * 1000;
+        return view('pengembalian/export', $data);
+    }
+    public function delete($id)
+    {
+        // Cek role admin
+        if (session()->get('role') != 'admin') {
+            return redirect()->back()->with('error', 'Akses ditolak!');
         }
 
-        // ✅ Update status
-        $this->peminjamanModel->update($id, [
-            'status' => 'dikembalikan',
-            'denda' => $denda
-        ]);
+        $this->peminjamanModel->delete($id);
 
-        // 🔥 Kembalikan stok
-        $this->alatModel->update($alat['id_alat'], [
-            'persediaan' => $alat['persediaan'] + $pinjam['jumlah']
-        ]);
-
-        return redirect()->to('/pengembalian')
-            ->with('success', 'Alat dikembalikan. Denda: Rp ' . $denda);
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }
