@@ -21,6 +21,7 @@ class Auth extends Controller
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
+        // Validasi inputan
         $users = $usersModel->getUsersByUsername($username);
 
         if ($users) {
@@ -31,6 +32,8 @@ class Auth extends Controller
                     'username' => $users['username'],
                     'role' => $users['role'],
                     'foto' => $users['foto'],
+                    'email' => $users['email'],
+                    'no_hp' => $users['no_hp'],
                     'logged_in' => true
                 ]);
 

@@ -69,9 +69,8 @@ $routes->get('/pengembalian/export', 'PengembalianController::export', $allRole)
 
 //profile
 $routes->get('/profile', 'ProfileController::index', $allRole); //aksi ke menu profile
-$routes->get('/profile/edit/(:num)', 'ProfileController::edit/$1', $allRole); //form edit profile
-$routes->post('/profile/update', 'ProfileController::update', $allRole); //aksi update profile
-
+$routes->get('profile/edit', 'ProfileController::edit');
+$routes->post('/profile/update/(:num)', 'ProfileController::update/$1', $allRole);
 //approval peminjaman
 $routes->get('/approval', 'ApprovalController::index', $penyetuju); //aksi ke menu approval
 $routes->post('/approval/approve/(:num)', 'ApprovalController::approve/$1', $penyetuju);

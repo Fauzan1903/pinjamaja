@@ -22,11 +22,12 @@
                     <div><strong><?= session()->get('nama') ?></strong></div>
                     <small class="text-muted">Masuk sebagai: <?= session()->get('role') ?></small>
                 </a>
+                <?php $idu = session('id'); ?>
 
                 <!-- DROPDOWN MENU -->
                 <ul class="dropdown-menu text-center">
                     <li>
-                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
+                        <a class="dropdown-item" href="<?= base_url('profile/edit/' . $idu) ?>">
                             <i class="bi bi-person"></i> Profil
                         </a>
                     </li>

@@ -15,16 +15,18 @@ class ProfileController extends BaseController
         return view('profile/index', $data);
     }
 
-    public function edit($id)
+    public function edit()
     {
         $model = new UsersModel();
-        $data['user'] = $model->find($id);
+        $id = session()->get('id_user');
 
-        if (!$data['user']) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
+        $user = $model->find($id);
+
+        if (!$user) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('User tidak ditemukan');
         }
 
-        return view('profile/edit', $data);
+        return view('profile/edit', ['user' => $user]);
     }
 
     public function update()
@@ -34,6 +36,7 @@ class ProfileController extends BaseController
 
         $rules = [
             'nama' => 'required|min_length[3]',
+            // 🔥 perbaikan di sini (pakai id_user, bukan id)
             'username' => 'required|min_length[3]|is_unique[users.username,id_user,' . $id . ']',
             'foto' => 'permit_empty|max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
             'no_hp' => 'permit_empty|regex_match[/^[0-9+\-\s]+$/]|min_length[10]|max_length[15]',
@@ -46,7 +49,8 @@ class ProfileController extends BaseController
 
         $file = $this->request->getFile('foto');
         $newName = null;
-        if ($file->isValid() && !$file->hasMoved()) {
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
             $newName = time() . '_' . $file->getRandomName();
             $file->move('uploads/users', $newName);
         }
@@ -54,15 +58,16 @@ class ProfileController extends BaseController
         $data = [
             'nama' => $this->request->getPost('nama'),
             'username' => $this->request->getPost('username'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'email' => $this->request->getPost('email'),
         ];
 
         if ($newName) {
             $data['foto'] = $newName;
         }
 
-        $model->update($id, $data);
-
-        $model->update($id, $data);
+        // 🔥 pastikan update pakai primary key yang benar
+        $model->where('id_user', $id)->set($data)->update();
 
         return redirect()->back()->with('success', 'Profile updated successfully');
     }

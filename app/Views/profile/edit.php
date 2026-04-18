@@ -23,8 +23,7 @@
                 </div>
             <?php endif; ?>
 
-            <form action="<?= base_url('profile/update') ?>" method="post" enctype="multipart/form-data">
-                <?= csrf_field() ?>
+            <form action="<?= base_url('profile/update/' . $user['id_user']) ?>" method="post"> <?= csrf_field() ?>
 
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
