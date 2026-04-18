@@ -37,9 +37,27 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="foto" class="form-label">Foto Profil</label>
-                    <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
-                    <small class="form-text text-muted">Biarkan kosong jika tidak ingin mengubah foto.</small>
+                    <label class="form-label">Foto</label>
+                    <input type="file" name="foto" class="form-control">
+                    <p class="text-muted">Foto sekarang:</p>
+
+                    <?php if ($user['foto']): ?>
+                        <img src="<?= base_url('uploads/users/' . $user['foto']) ?>" width="80" class="rounded">
+                    <?php else: ?>
+                        <span>-</span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="mb-3">
+                    <label for="no_hp" class="form-label">Nomor HP</label>
+                    <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= old('no_hp', $user['no_hp'] ?? '') ?>" placeholder="Contoh: 081234567890">
+                    <small class="form-text text-muted">Diperlukan untuk komunikasi dan konfirmasi.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" value="<?= $user['email'] ?? '' ?>" class="form-control" placeholder="Contoh:emailanda@gmail.com">
+                    <small class=" text-muted">Diperlukan untuk komunikasi dan konfirmasi</small>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update Profile</button>
@@ -47,28 +65,6 @@
             </form>
 
             <hr>
-
-            <h6>Update Password</h6>
-            <form action="<?= base_url('profile/update-password') ?>" method="post">
-                <?= csrf_field() ?>
-
-                <div class="mb-3">
-                    <label for="current_password" class="form-label">Password Lama</label>
-                    <input type="password" class="form-control" id="current_password" name="current_password" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="new_password" class="form-label">Password Baru</label>
-                    <input type="password" class="form-control" id="new_password" name="new_password" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="confirm_password" class="form-label">Konfirmasi Password Baru</label>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-                </div>
-
-                <button type="submit" class="btn btn-warning">Update Password</button>
-            </form>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
+<link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+
 <div class="container mt-4">
     <h3 class="mb-4">Pengembalian Alat</h3>
 
@@ -20,11 +22,13 @@
         <thead class="table-dark text-center">
             <tr>
                 <th>No</th>
-                <th>Nama Alat</th>
+                <th>Peminjam</th>
+                <th>Alat</th>
                 <th>Jumlah</th>
                 <th>Tanggal Pinjam</th>
                 <th>Batas Kembali</th>
                 <th>Status</th>
+                <th>Denda</th>
                 <th>Aksi</th>
                 <th>Bagikan</th>
             </tr>
@@ -35,22 +39,38 @@
             <?php foreach ($peminjaman as $p): ?>
                 <tr>
                     <td><?= $no++ ?></td>
+                    <td><?= $p['nama_user'] ?? $p['nama_peminjam'] ?? 'N/A' ?></td>
                     <td><?= $p['nama_alat'] ?></td>
                     <td><?= $p['jumlah'] ?></td>
                     <td><?= $p['data_peminjam'] ?></td>
                     <td><?= $p['data_dikembalikan'] ?></td>
                     <td><?= $p['status'] ?></td>
                     <td>
-                        <?php if (session()->get('role') == 'user'): ?>
+                        <?php if ($p['status'] == 'dikembalikan' && isset($p['denda'])): ?>
+                            <?php if ($p['denda'] > 0): ?>
+                                <span class="text-danger fw-bold">Rp <?= number_format($p['denda'], 0, ',', '.') ?></span>
+                            <?php else: ?>
+                                <span class="text-success">Rp 0</span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <span class="text-muted">-</span>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <?php if (session()->get('role') == 'user' && $p['status'] != 'dikembalikan'): ?>
+                            <a href="<?= base_url('pengembalian/kembalikan/' . $p['id_peminjam']) ?>"
+                                class="btn btn-success btn-sm"
+                                onclick="return confirm('Kembalikan alat ini?')">
+                                Kembalikan
+                            </a>
+                        <?php elseif (session()->get('role') == 'user' && $p['status'] != 'dikembalikan'): ?>
                             <a href="<?= base_url('pengembalian/kembalikan/' . $p['id_peminjam']) ?>"
                                 class="btn btn-success btn-sm"
                                 onclick="return confirm('Kembalikan alat ini?')">
                                 Kembalikan
                             </a>
                         <?php endif; ?>
-                        <a href="<?= base_url('pengembalian/export') ?>" target="_blank" class="btn btn-info btn-sm">
-                            Export PDF
-                        </a>
+
                         <!-- Tombol Hapus (admin saja) -->
                         <?php if (session()->get('role') == 'admin'): ?>
                             <a href="<?= base_url('pengembalian/delete/' . $p['id_peminjam']) ?>"
@@ -63,18 +83,18 @@
                     <td class="text-center">
 
                         <!-- 🔥 SHARE WHATSAPP -->
-                        <a href="https://wa.me/?text=<?= urlencode(
-                                                            'Pengembalian alat ID: ' . $p['id_alat'] .
-                                                                ' | Jumlah: ' . $p['jumlah'] .
-                                                                ' | Status: ' . $p['status']
-                                                        ) ?>"
+                        <a href="https://wa.me/?081234567890=<?= urlencode(
+                                                                    'Pengembalian alat ID: ' . $p['id_alat'] .
+                                                                        ' | Jumlah: ' . $p['jumlah'] .
+                                                                        ' | Status: ' . $p['status']
+                                                                ) ?>"
                             target="_blank"
                             class="btn btn-success btn-sm">
                             <i class="bi bi-whatsapp"></i>
                         </a>
 
                         <!-- 🔥 SHARE instagram -->
-                        <a href="https://www.instagram.com/sharer/sharer.php?u=<?= base_url('pengembalian') ?>"
+                        <a href="https://www.instagram.com/hafidz_sundara/hafidz_sundara.php?u=<?= base_url('pengembalian') ?>"
                             target="_blank"
                             class="btn btn-primary btn-sm">
                             <i class="bi bi-instagram"></i>

@@ -26,7 +26,7 @@
                 <?php endif; ?>
 
                 <form action="<?= base_url('users/store') ?>" method="post" enctype="multipart/form-data">
-
+                    <?= csrf_field(); ?> <!-- 🔥 WAJIB -->
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap</label>
                         <input type="text" name="nama" class="form-control" required>
@@ -46,6 +46,7 @@
                         <label class="form-label">Role</label>
                         <select name="role" class="form-control" required>
                             <option value="">-- Pilih Role --</option>
+                            <option value="user">Petugas</option>
                             <option value="user">User</option>
                         </select>
                     </div>
@@ -54,6 +55,18 @@
                         <label class="form-label">Foto Profil</label>
                         <input type="file" name="foto" class="form-control" accept="image/*">
                         <small class="text-muted">Kosongkan jika tidak upload foto</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Contoh: user@example.com">
+                        <small class=" text-muted">Diperlukan untuk komunikasi dan konfirmasi</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nomor HP</label>
+                        <input type="text" name="no_hp" class="form-control" placeholder="Contoh: 081234567890">
+                        <small class="text-muted">Diperlukan untuk komunikasi dan konfirmasi</small>
                     </div>
 
                     <button type="submit" class="btn btn-success">Simpan</button>

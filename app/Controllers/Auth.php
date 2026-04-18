@@ -40,7 +40,7 @@ class Auth extends Controller
                 return redirect()->to('/login');
             }
         } else {
-            $session->setFlashdata('error', 'Nama tidak ditemukan');
+            $session->setFlashdata('error', 'Username tidak ditemukan');
             return redirect()->to('/login');
         }
     }

@@ -12,7 +12,9 @@ $authFilter = ['filter' => 'auth'];
 // Variabel Role
 $admin     = ['filter' => 'role:admin'];
 $user     = ['filter' => 'role:user'];
-$allRole   = ['filter' => 'role:admin, user'];
+$petugas  = ['filter' => 'role:petugas'];
+$penyetuju = ['filter' => 'role:admin, petugas'];
+$allRole   = ['filter' => 'role:admin, user, petugas'];
 
 // Login
 $routes->get('/login', 'Auth::login');
@@ -21,7 +23,14 @@ $routes->get('/logout', 'Auth::logout');
 
 // Halaman utama
 $routes->get('/', 'Home::index', $authFilter);
-$routes->get('/dashboard', 'Home::index', $authFilter);
+$routes->get('/dashboard', 'DashboardController::index', $authFilter);
+
+// Notifikasi
+$routes->get('/notifikasi', 'Home::notifikasi', $petugas); //aksi ke menu notifikasi
+$routes->get('/api/notifikasi', 'Home::getNotifikasi', $petugas); //aksi ambil data notifikasi untuk ajax
+$routes->post('/notifikasi/mark-read/(:num)', 'Home::markAsRead/$1', $petugas); //aksi mark as read notifikasi
+$routes->post('/notifikasi/mark-all-read', 'Home::markAllAsRead', $petugas); //aksi mark as read semua notifikasi
+$routes->post('/notifikasi/delete/(:num)', 'Home::deleteNotifikasi/$1', $petugas); //aksi hapus notifikasi
 
 // User
 $routes->get('/users/create', 'Users::create'); // form tambah user
@@ -37,29 +46,41 @@ $routes->get('/users/delete/(:num)', 'Users::delete/$1', $admin); // aksi hapus 
 $routes->get('/alat', 'AlatController::index'); // aksi ke menu alat
 $routes->get('/alat/delete/(:num)', 'SimpanController::delete/$1', $admin); // aksi hapus alat
 $routes->get('/alat/edit/(:num)', 'AlatController::edit/$1', $admin); // form edit alat
-$routes->post('/alat/update', 'AlatController::update'); // aksi update alat
+$routes->post('/alat/update', 'AlatController::update', $admin); // aksi update alat
 $routes->post('/alat/update/(:num)', 'SimpanController::update/$1', $admin); // aksi update alat
-$routes->get('/alat/tambah', 'AlatController::tambah'); // form tambah alat
-$routes->post('/alat/simpan', 'AlatController::simpan'); // aksi simpan alat
+$routes->get('/alat/tambah', 'AlatController::tambah', $admin); // form tambah alat
+$routes->post('/alat/simpan', 'AlatController::simpan', $admin); // aksi simpan alat
 
 
 //peminjaman
-$routes->get('/pinjam/(:num)', 'PinjamController::form/$1'); //form peminjaman
-$routes->post('/pinjam/simpan', 'PinjamController::simpan'); //aksi simpan peminjaman
-$routes->post('/alat/simpan', 'AlatController::simpan'); //aksi simpan alat
+$routes->get('/pinjam/(:num)', 'PinjamController::form/$1', $allRole); //form peminjaman
+$routes->post('/pinjam/simpan', 'PinjamController::simpan', $allRole); //aksi simpan peminjaman
+$routes->post('/alat/simpan', 'AlatController::simpan', $allRole); //aksi simpan alat
 
 // pengembalian
-$routes->get('/pengembalian', 'PengembalianController::index'); //aksi ke menu pengembalian
-$routes->get('/pengembalian/kembalikan/(:num)', 'PengembalianController::kembalikan/$1'); //aksi kembalikan alat
-$routes->get('/pengembalian/delete/(:num)', 'PengembalianController::delete/$1'); //aksi hapus data pengembalian
-$routes->get('/riwayat', 'PengembalianController::riwayat'); //aksi riwayat pengembalian
+$routes->get('/pengembalian', 'PengembalianController::index', $allRole); //aksi ke menu pengembalian
+$routes->get('/pengembalian/kembalikan/(:num)', 'PengembalianController::kembalikan/$1', $user); //aksi kembalikan alat
+$routes->get('/pengembalian/delete/(:num)', 'PengembalianController::delete/$1', $allRole); //aksi hapus data pengembalian
+$routes->get('/riwayat', 'PengembalianController::riwayat', $allRole); //aksi riwayat pengembalian
 
 //pdf
-$routes->get('/pengembalian/export', 'PengembalianController::export'); //aksi export pdf data pengembalian
+$routes->get('/pengembalian/export', 'PengembalianController::export', $allRole); //aksi export pdf data pengembalian
 
 
-// ✅ TAMBAHKAN DI SINI
-$routes->get('/profile', 'ProfileController::index');
-$routes->post('/profile/update-password', 'ProfileController::updatePassword');
-$routes->get('/profile/edit/(:num)', 'ProfileController::edit/$1');
-$routes->post('/profile/update', 'ProfileController::update');
+//profile
+$routes->get('/profile', 'ProfileController::index', $allRole); //aksi ke menu profile
+$routes->get('/profile/edit/(:num)', 'ProfileController::edit/$1', $allRole); //form edit profile
+$routes->post('/profile/update', 'ProfileController::update', $allRole); //aksi update profile
+
+//approval peminjaman
+$routes->get('/approval', 'ApprovalController::index', $penyetuju); //aksi ke menu approval
+$routes->post('/approval/approve/(:num)', 'ApprovalController::approve/$1', $penyetuju);
+$routes->post('/approval/reject/(:num)', 'ApprovalController::reject/$1', $penyetuju);
+
+//Kategori
+$routes->get('/kategori', 'KategoriController::index'); //
+$routes->get('/kategori/tambah', 'KategoriController::tambah'); //
+$routes->post('/kategori/simpan', 'KategoriController::simpan');
+$routes->get('/kategori/edit/(:num)', 'KategoriController::edit/$1');
+$routes->post('/kategori/update/(:num)', 'KategoriController::update/$1');
+$routes->post('/kategori/delete/(:num)', 'KategoriController::delete/$1');

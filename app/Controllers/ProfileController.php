@@ -35,7 +35,9 @@ class ProfileController extends BaseController
         $rules = [
             'nama' => 'required|min_length[3]',
             'username' => 'required|min_length[3]|is_unique[users.username,id_user,' . $id . ']',
-            'foto' => 'uploaded[foto]|max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+            'foto' => 'permit_empty|max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+            'no_hp' => 'permit_empty|regex_match[/^[0-9+\-\s]+$/]|min_length[10]|max_length[15]',
+            'email' => 'permit_empty|valid_email',
         ];
 
         if (!$this->validate($rules)) {
@@ -60,35 +62,8 @@ class ProfileController extends BaseController
 
         $model->update($id, $data);
 
-        return redirect()->to('/profile')->with('success', 'Profile updated successfully');
-    }
-
-    public function updatePassword()
-    {
-        $model = new UsersModel();
-        $id = session()->get('id_user');
-
-        $rules = [
-            'current_password' => 'required',
-            'new_password' => 'required|min_length[6]',
-            'confirm_password' => 'required|matches[new_password]',
-        ];
-
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-
-        $user = $model->find($id);
-        if (!password_verify($this->request->getPost('current_password'), $user['password'])) {
-            return redirect()->back()->withInput()->with('error', 'Current password is incorrect');
-        }
-
-        $data = [
-            'password' => password_hash($this->request->getPost('new_password'), PASSWORD_DEFAULT),
-        ];
-
         $model->update($id, $data);
 
-        return redirect()->to('/profile')->with('success', 'Password updated successfully');
+        return redirect()->back()->with('success', 'Profile updated successfully');
     }
 }

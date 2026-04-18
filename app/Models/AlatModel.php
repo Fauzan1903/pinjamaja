@@ -11,7 +11,9 @@ class AlatModel extends Model
     protected $allowedFields = [
         'nama_alat',
         'deskripsi',
-        'persediaan'
+        'persediaan',
+        'foto',
+        'id_kategori'
     ];
 
     public $timestamps = false;

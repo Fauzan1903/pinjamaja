@@ -1,6 +1,9 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
+<link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+
+
 <div class="container mt-5">
 
     <h3 class="mb-4">Data Users</h3>
@@ -20,10 +23,12 @@
                 <th width="50">No</th>
                 <th>Nama</th>
                 <th>Username</th>
+                <th>No HP</th>
+                <th>Email</th>
                 <th>Role</th>
                 <th>Foto</th>
                 <?php if (session()->get('role') == 'admin') : ?>
-                    <th width="150">Aksi</th>
+                    <th width="200">Aksi</th>
                 <?php endif; ?>
 
             </tr>
@@ -37,6 +42,22 @@
                         <td class="text-center"><?= $no++ ?></td>
                         <td><?= $u['nama'] ?></td>
                         <td><?= $u['username'] ?></td>
+                        <td>
+                            <?php if (!empty($u['no_hp'])): ?>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span><?= $u['no_hp'] ?></span>
+                                    <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $u['no_hp']) ?>"
+                                        target="_blank"
+                                        class="btn btn-success btn-sm"
+                                        title="Hubungi via WhatsApp">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            <?php else: ?>
+                                <span class="text-muted">-</span>
+                            <?php endif; ?>
+                        </td>
+                        <td><?= $u['email'] ?? '-' ?></td>
                         <td><?= ucfirst($u['role']) ?></td>
                         <td class="text-center">
                             <?php if ($u['foto']): ?>
@@ -64,7 +85,7 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="6" class="text-center text-muted">Belum ada data user</td>
+                    <td colspan="7" class="text-center text-muted">Belum ada data user</td>
                 </tr>
             <?php endif; ?>
         </tbody>

@@ -1,6 +1,8 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
+<link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+
 <div class="card shadow">
     <div class="card-header bg-warning">
         <h4 class="mb-0">Edit Alat</h4>

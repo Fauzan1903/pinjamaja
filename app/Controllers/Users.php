@@ -3,14 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\UsersModel;
+use App\Models\NotifikasiModel;
 
 class Users extends BaseController
 {
     protected $users;
+    protected $notifikasi;
 
     public function __construct()
     {
         $this->users = new UsersModel();
+        $this->notifikasi = new NotifikasiModel();
     }
 
     public function create()
@@ -48,7 +51,16 @@ class Users extends BaseController
             'username' => $this->request->getPost('username'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
             'role'     => $this->request->getPost('role'),
-            'foto'     => $namaFoto
+            'foto'     => $namaFoto,
+            'email'    => $this->request->getPost('email'),
+            'no_hp'    => $this->request->getPost('no_hp')
+        ]);
+
+        // Simpan notifikasi untuk admin
+        $this->notifikasi->save([
+            'pesan' => "User baru mendaftar: {$this->request->getPost('nama')} ({$this->request->getPost('username')}) dengan role {$this->request->getPost('role')}",
+            'tanggal' => date('Y-m-d H:i:s'),
+            'status' => 'belum_dibaca',
         ]);
 
         return redirect()->to('/login')->with('success', 'User berhasil ditambahkan!');
@@ -94,7 +106,9 @@ class Users extends BaseController
             'nama'     => $this->request->getPost('nama'),
             'username' => $this->request->getPost('username'),
             'role'     => $this->request->getPost('role'),
-            'foto'     => $namaFoto
+            'foto'     => $namaFoto,
+            'email'    => $this->request->getPost('email'),
+            'no_hp'    => $this->request->getPost('no_hp')
         ];
 
         // Jika password diisi, baru update

@@ -5,6 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class PeminjamanModel extends Model
+
 {
     protected $table = 'peminjaman';
     protected $primaryKey = 'id_peminjam';
@@ -16,8 +17,8 @@ class PeminjamanModel extends Model
         'jumlah',
         'data_peminjam',
         'data_dikembalikan',
-        'status'
+        'status',
+        'denda'
     ];
-
     protected $useTimestamps = false;
 }

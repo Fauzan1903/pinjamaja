@@ -5,18 +5,21 @@ namespace App\Controllers;
 use App\Models\AlatModel;
 use App\Models\UsersModel;
 use App\Models\PeminjamanModel;
+use App\Models\NotifikasiModel;
 
 class PinjamController extends BaseController
 {
     protected AlatModel $AlatModel;
     protected UsersModel $UsersModel;
     protected PeminjamanModel $PeminjamanModel;
+    protected NotifikasiModel $NotifikasiModel;
 
     public function __construct()
     {
         $this->AlatModel = new AlatModel();
         $this->UsersModel = new UsersModel();
         $this->PeminjamanModel = new PeminjamanModel();
+        $this->NotifikasiModel = new NotifikasiModel();
     }
 
     public function form(int $id)
@@ -55,61 +58,32 @@ class PinjamController extends BaseController
 
         $stokTersedia = (int) $alat['persediaan'];
 
-        // Validasi stok
-        if ($jumlah > $stokTersedia) {
-            return redirect()->back()->withInput()->with('error', 'Stok tidak cukup. Tersedia: ' . $stokTersedia . '.');
-        }
-
-        // Mulai transaksi database
-        $db = \Config\Database::connect();
-        $db->transStart();
-
-        // Simpan peminjaman
+        // Simpan peminjaman dengan status ditunda
         $peminjamanData = [
             'id_user' => session('id_user'),
             'id_alat' => $id_alat,
             'nama_peminjam' => $nama,
             'jumlah' => $jumlah,
             'data_peminjam' => date('Y-m-d'),
-            'data_dikembalikan' => date('Y-m-d', strtotime('+7 days')),
-            'status' => 'dipinjam',
+            'data_dikembalikan' => date('Y-m-d', strtotime('+3 days')),
+            'status' => 'ditunda',
         ];
 
         $inserted = $this->PeminjamanModel->insert($peminjamanData);
 
         if ($inserted === false) {
-            $db->transRollback();
             $errors = $this->PeminjamanModel->errors();
             $message = $errors ? implode(' ', $errors) : 'Gagal menyimpan data peminjaman.';
             return redirect()->back()->withInput()->with('error', $message);
         }
 
-        // Kurangi stok alat
-        $updated = $this->AlatModel->update($id_alat, [
-            'persediaan' => $stokTersedia - $jumlah,
+        // Kirim notifikasi ke admin bahwa ada permintaan peminjaman baru
+        $this->NotifikasiModel->insert([
+            'pesan' => "Permintaan peminjaman baru: {$alat['nama_alat']} oleh {$nama}, jumlah: {$jumlah}. Menunggu approval.",
+            'tanggal' => date('Y-m-d H:i:s'),
+            'status' => 'belum_dibaca',
         ]);
 
-        if ($updated === false) {
-            $db->transRollback();
-            $errors = $this->AlatModel->errors();
-            $message = $errors ? implode(' ', $errors) : 'Gagal mengurangi stok alat.';
-            return redirect()->back()->withInput()->with('error', $message);
-        }
-
-        $db->transComplete();
-
-        if (!$db->transStatus()) {
-            $dbError = $db->error();
-            return redirect()->back()->withInput()->with('error', $dbError['message'] ?? 'Gagal menyimpan data peminjaman.');
-        }
-
-        return redirect()->to('/alat')->with('success', 'Berhasil pinjam alat. Menunggu persetujuan.');
-        $peminjamanModel->where('id_user', $id)->delete();
-        $userModel->delete($id);
-        $pesan = "Ada peminjaman baru!\nAlat ID: $idAlat\nJumlah: $jumlah";
-
-        $wa = "https://wa.me/082124072012?text=" . urlencode($pesan);
-
-        return redirect()->to($wa);
+        return redirect()->to('/alat')->with('success', 'Permintaan peminjaman berhasil dikirim. Menunggu persetujuan admin.');
     }
 }

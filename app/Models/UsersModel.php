@@ -8,7 +8,7 @@ class UsersModel extends Model
 {
     protected $table = 'users';
     protected $primaryKey = 'id_user';
-    protected $allowedFields = ['nama', 'username', 'password', 'role', 'foto'];
+    protected $allowedFields = ['nama', 'username', 'password', 'role', 'foto', 'email', 'no_hp'];
 
     public function getUsersByUsername($username)
     {
