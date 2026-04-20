@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="<?= csrf_hash() ?>">
-    <meta name="csrf-name" content="<?= csrf_token() ?>">
-
 
     <!-- Bootstrap CSS Lokal -->
     <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -209,7 +206,7 @@
                 // Tambahkan styling khusus untuk notifikasi denda
                 if (notifikasi.pesan.includes('Pemberitahuan Denda')) {
                     options.icon = '<?= base_url('assets/img/warning-icon.png') ?>'; // Jika ada icon warning
-                    options.body = '🚨 ' + options.body;
+                    options.body = '' + options.body;
                 }
 
                 const notification = new Notification('PinjaminAja - Notifikasi', options);
