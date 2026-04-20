@@ -48,7 +48,7 @@ class NotifikasiController extends BaseController
         $db = \Config\Database::connect();
 
         // 🔒 hanya admin boleh hapus
-        if (session()->get('role') != 'admin') {
+        if (session()->get('role') != 'petugas') {
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Akses ditolak'

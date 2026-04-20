@@ -7,156 +7,143 @@
     <!-- Bootstrap CSS Lokal -->
     <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/bootstrap-icons-1.13.1/bootstrap-icons.css') ?>" rel="stylesheet">
-    <link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+    <link rel="icon" href="<?= base_url('assets/img/vaficon.png') ?>">
 
 
     <style>
-        body {
-            font-family: "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            overflow-x: auto;
+        /* 1. Pengaturan Dasar & Font Modern */
+        :root {
+            --sidebar-bg: #1e1e2d;
+            /* Warna gelap elegan */
+            --sidebar-color: #a2a3b7;
+            --active-bg: #2b2b40;
+            --active-color: #ffffff;
+            --accent-color: #4e73df;
+            /* Warna biru aksen */
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f8f9fc;
+            margin: 0;
+        }
+
+        /* 2. Sidebar Minimalis */
         .sidebar {
-            width: 200px;
-            background-color: rgb(218, 216, 216);
-            position: relative;
+            width: 240px;
+            /* Sedikit lebih lebar agar teks tidak sesak */
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+            z-index: 100;
         }
 
         .content {
             flex-grow: 1;
-            padding: 15px;
-            background-color: #ffffff;
+            padding: 30px;
+            background-color: #f8f9fc;
+            min-width: 0;
+            /* Mencegah overflow */
         }
 
-        /* 🔥 Efek tombol menonjol */
-        .btn {
-            transition: all 0.2s ease-in-out;
-        }
-
-        /* Saat hover */
-        .btn:hover {
-            transform: scale(1.08) translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Saat diklik */
-        .btn:active {
-            transform: scale(0.95);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sidebar menu */
+        /* 3. Link Menu Sidebar */
         .sidebar .nav-link {
-            color: #333;
-            border-radius: 8px;
-            margin: 5px;
+            color: var(--sidebar-color);
+            padding: 12px 20px;
+            margin: 4px 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* Jarak antara ikon dan teks */
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        /* Hover State */
+        .sidebar .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--active-color);
+            transform: translateX(4px);
+        }
+
+        /* Active State */
+        .sidebar .nav-link.active {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(78, 115, 223, 0.3);
+        }
+
+        /* Ikon di dalam Sidebar */
+        .sidebar .nav-link i {
+            font-size: 1.1rem;
             transition: 0.2s;
         }
 
-        /* Hover */
-        .sidebar .nav-link:hover {
-            background-color: #818080;
-            padding-left: 12px;
-        }
-
-        /* Active menu */
-        .sidebar .nav-link.active {
-            background-color: #818080;
-            font-weight: bold;
-            color: black !important;
-        }
-
-        /* Judul sidebar */
+        /* 4. Branding & Teks */
         .sidebar h5 {
-            font-weight: bold;
-            margin-top: 10px;
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 20px 25px 10px;
+            margin: 0;
+            opacity: 0.5;
         }
 
-        .sidebar .nav-link {
-            transform: translateX(0);
-        }
-
-        .sidebar .nav-link:hover {
-            transform: translateX(5px);
-        }
-
-        /* Sidebar collapse */
-        .sidebar {
-            transition: 0.3s;
-        }
-
-        /* Saat collapse */
+        /* 5. Collapse Mode (Mode Kecil) */
         .sidebar.collapsed {
-            width: 70px;
+            width: 80px;
         }
 
-        /* Sembunyikan teks saat collapse */
-        .sidebar.collapsed .nav-link span {
+        .sidebar.collapsed .nav-link span,
+        .sidebar.collapsed h5 {
             display: none;
         }
 
-        /* Notification badge animation */
+        .sidebar.collapsed .nav-link {
+            justify-content: center;
+            padding: 15px 0;
+            margin: 4px 15px;
+        }
+
+        /* 6. Animasi Tombol Global */
+        .btn {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 8px 18px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Notif Counter agar lebih modern */
         #notif-counter {
-            animation: pulse 2s infinite;
+            background-color: #e74a3b;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50px;
+            border: 2px solid var(--sidebar-bg);
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Browser notification styling (for supported browsers) */
-        .notification-denda {
-            border-left: 4px solid #dc3545 !important;
-        }
-
-        .notification-denda .notification-icon {
-            color: #dc3545;
-            font-size: 1.2em;
-        }
-
-        /* Custom notification button */
-        .notification-permission-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: none;
-        }
-
-        .notification-permission-btn.show {
-            display: block;
-        }
-
+        /* Card Styling agar serasi */
         .card {
+            border: none;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
             border-radius: 12px;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            transition: 0.3s;
-        }
-
-        .input-group .btn {
-            transition: 0.2s;
-        }
-
-        .input-group .btn:hover {
-            transform: scale(1.1);
-        }
     </style>
-
 </head>
 
 <body>

@@ -15,7 +15,7 @@ class ProfileController extends BaseController
         return view('profile/index', $data);
     }
 
-    public function edit()
+    public function edit($id = null)
     {
         $model = new UsersModel();
         $id = session()->get('id_user');

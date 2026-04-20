@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+<link rel="icon" href="<?= base_url('assets/img/vaficon.png') ?>">
 
 <div class="card shadow">
     <div class="card-header bg-warning">

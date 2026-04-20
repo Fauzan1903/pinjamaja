@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Login - PinjaminAja</title>
 
-    <link rel="icon" href="<?= base_url('assets/img/Logo.png') ?>">
+    <link rel="icon" href="<?= base_url('assets/img/vaficon.png') ?>">
     <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/bootstrap-icons-1.13.1/bootstrap-icons.css') ?>" rel="stylesheet">
 

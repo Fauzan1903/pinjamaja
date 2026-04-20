@@ -3,7 +3,7 @@
 
         <!-- LOGO -->
         <div class="text-center mb-4">
-            <img src="<?= base_url('assets/img/Logo.png') ?>" width="60">
+            <img src="<?= base_url('assets/img/vaficon.png') ?>" width="60">
             <h5>PinjaminAja</h5>
         </div>
 
@@ -27,13 +27,11 @@
                 <!-- DROPDOWN MENU -->
                 <ul class="dropdown-menu text-center">
                     <li>
-                        <a class="dropdown-item" href="<?= base_url('profile/edit/' . $idu) ?>">
-                            <i class="bi bi-person"></i> Profil
+                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
+                            <i class="bi bi-person"></i> Lihat Profil
                         </a>
                     </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+
                     <li>
                         <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">
                             <i class="bi bi-box-arrow-right"></i> Logout
@@ -66,15 +64,6 @@
                 <li class="nav-item">
                     <a href="<?= base_url('approval') ?>" class="nav-link <?= uri_string() == 'approval' ? 'active' : '' ?>">
                         <i class="bi bi-check-circle"></i> <span>Approval</span>
-                    </a>
-                </li>
-            <?php endif; ?>
-
-            <?php if (session()->get('role') == 'petugas'): ?>
-                <li class="nav-item">
-                    <a href="<?= base_url('notifikasi') ?>" class="nav-link <?= uri_string() == 'notifikasi' ? 'active' : '' ?> position-relative">
-                        <i class="bi bi-bell"></i> <span>Notifikasi</span>
-                        <span id="notif-counter" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="display: none;">0</span>
                     </a>
                 </li>
             <?php endif; ?>
