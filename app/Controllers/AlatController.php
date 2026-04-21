@@ -9,12 +9,19 @@ class AlatController extends BaseController
     public function index()
     {
         $db = \Config\Database::connect();
+        $keyword = $this->request->getGet('keyword');
 
-        $data['alat'] = $db->table('alat')
+        $builder = $db->table('alat')
             ->select('alat.*, kategori.nama_kategori')
-            ->join('kategori', 'kategori.id_kategori = alat.id_kategori', 'left')
-            ->get()
-            ->getResultArray();
+            ->join('kategori', 'kategori.id_kategori = alat.id_kategori', 'left');
+
+        if ($keyword) {
+            $builder->like('alat.nama_alat', $keyword);
+            // kalau mau lebih canggih bisa tambah:
+            // ->orLike('kategori.nama_kategori', $keyword);
+        }
+
+        $data['alat'] = $builder->get()->getResultArray();
 
         return view('alat/index', $data);
     }

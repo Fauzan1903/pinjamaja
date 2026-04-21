@@ -82,6 +82,8 @@
                 </li>
             <?php endif; ?>
 
+
+
             <hr>
 
             <li class="nav-item">
@@ -89,6 +91,9 @@
                     <i class="bi bi-box-arrow-left"></i> Logout
                 </a>
             </li>
+            <?php if (session()->get('role') == 'admin') : ?>
+                <a href="<?= base_url('/backup') ?>" class="nav-link text-success"><i class="bi bi-download"></i>Backup Database</a>
+            <?php endif; ?>
         </ul>
 
     </div>

@@ -25,31 +25,35 @@
     }
 
     /* Search Bar Professional */
-    .search-wrapper {
-        max-width: 400px;
+    .input-group-modern {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        background-color: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 10px !important;
+        padding: 2px 10px !important;
+        transition: all 0.3s ease;
+        min-width: 250px;
     }
 
-    .input-group-modern {
-        background: #f4f7f6;
-        border-radius: 8px;
-        border: 1px solid #e1e8ed;
-        overflow: hidden;
-        transition: 0.3s;
+    .input-group-modern .input-group-text {
+        padding: 0 8px 0 0 !important;
+        background: transparent !important;
+    }
+
+    .input-group-modern .form-control {
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        padding: 8px 0 !important;
+        font-size: 0.9rem !important;
+        color: #334155 !important;
     }
 
     .input-group-modern:focus-within {
-        border-color: var(--accent-blue);
-        box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.1);
-    }
-
-    .input-group-modern input {
-        background: transparent;
-        border: none;
-        padding: 10px 15px;
-    }
-
-    .input-group-modern input:focus {
-        box-shadow: none;
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
     }
 
     /* Table Styling */
@@ -72,19 +76,28 @@
         border-bottom: 1px solid #f8f9fa;
     }
 
-    /* Role Badge */
+    /* --- Role Badge Custom Colors --- */
     .badge-role {
         padding: 6px 12px;
         border-radius: 6px;
         font-weight: 600;
         font-size: 11px;
+        display: inline-block;
     }
 
+    /* Warna Hijau untuk Petugas */
+    .badge-petugas {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    /* Warna Biru untuk Admin */
     .badge-admin {
         background: #e3f2fd;
         color: #1976d2;
     }
 
+    /* Warna Abu-abu untuk User biasa */
     .badge-user {
         background: #f5f5f5;
         color: #616161;
@@ -114,7 +127,7 @@
             <p class="text-muted small mb-0">Kelola akses dan informasi pengguna aplikasi.</p>
         </div>
         <?php if (session()->get('role') == 'admin') : ?>
-            <a href="<?= site_url('users/create') ?>" class="btn btn-primary shadow-sm" style="background: var(--sidebar-solid); border:none; position: relative; z-index: 10;">
+            <a href="<?= site_url('users/create') ?>" class="btn btn-primary shadow-sm" style="background: var(--sidebar-solid); border:none;">
                 <i class="bi bi-person-plus-fill me-2"></i> Tambah User
             </a>
         <?php endif; ?>
@@ -130,9 +143,9 @@
     <div class="card card-custom">
         <div class="card-header-custom d-flex justify-content-between align-items-center flex-wrap gap-3">
             <h5 class="mb-0 fw-bold text-dark">Daftar Pengguna</h5>
-            <div class="search-wrapper w-100 w-md-auto">
-                <div class="input-group input-group-modern">
-                    <span class="input-group-text bg-transparent border-0"><i class="bi bi-search text-muted"></i></span>
+            <div class="search-wrapper">
+                <div class="input-group-modern">
+                    <span class="input-group-text"><i class="bi bi-search text-muted"></i></span>
                     <input type="text" id="searchInput" class="form-control" placeholder="Cari user / username...">
                 </div>
             </div>
@@ -187,7 +200,16 @@
                                 </td>
                                 <td><span class="small text-muted"><?= $u['email'] ?? '-' ?></span></td>
                                 <td class="text-center">
-                                    <span class="badge-role <?= ($u['role'] == 'admin') ? 'badge-admin' : 'badge-user' ?>">
+                                    <?php
+                                    // Logika penentuan class badge berdasarkan role
+                                    $badgeClass = 'badge-user'; // Default
+                                    if (strtolower($u['role']) == 'admin') {
+                                        $badgeClass = 'badge-admin';
+                                    } elseif (strtolower($u['role']) == 'petugas') {
+                                        $badgeClass = 'badge-petugas';
+                                    }
+                                    ?>
+                                    <span class="badge-role <?= $badgeClass ?>">
                                         <?= strtoupper($u['role']) ?>
                                     </span>
                                 </td>

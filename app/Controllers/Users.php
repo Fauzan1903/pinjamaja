@@ -9,6 +9,7 @@ class Users extends BaseController
 {
     protected $users;
     protected $notifikasi;
+    protected $primaryKey = 'id_user';
 
     public function __construct()
     {

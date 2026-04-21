@@ -67,16 +67,22 @@ class PengembalianController extends BaseController
         }
 
         // Hitung denda jika terlambat
-        $tanggalKembali = new \DateTime($peminjaman['data_dikembalikan']);
         $tanggalSekarang = new \DateTime();
-        $selisihHari = $tanggalSekarang->diff($tanggalKembali)->days;
-
         $denda = 0;
-        $tarifDendaPerHari = 5000; // Rp 5.000 per hari
+        $tarifDendaPerHari = 10000;
 
-        if ($tanggalSekarang > $tanggalKembali) {
-            // Terlambat, hitung denda
-            $denda = $selisihHari * $tarifDendaPerHari;
+        // Pastikan tanggal kembali ada dan valid
+        if (!empty($peminjaman['data_dikembalikan'])) {
+
+            $tanggalKembali = new \DateTime($peminjaman['data_dikembalikan']);
+
+            if ($tanggalSekarang > $tanggalKembali) {
+                $selisihHari = $tanggalSekarang->diff($tanggalKembali)->days;
+                $denda = $selisihHari * $tarifDendaPerHari;
+            }
+        } else {
+            // kalau tanggal kosong → tidak kena denda
+            $denda = 0;
         }
 
         // Update status peminjaman menjadi 'dikembalikan' dan simpan denda

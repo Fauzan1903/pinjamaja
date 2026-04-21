@@ -41,17 +41,53 @@
         box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2);
     }
 
-    /* Search Bar Glassmorphism */
-    .glass-search {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Search Bar Modern & Solid */
+    .search-container .input-group {
+        background: #ffffff;
+        /* Mengunci warna background tetap putih solid */
         border-radius: 12px;
-        color: white !important;
+        border: 1px solid #cbd5e1;
+        padding: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        /* Shadow halus agar terlihat elegan */
     }
 
-    .glass-search::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+    /* Menghilangkan efek transparan bawaan bootstrap saat fokus */
+    .search-container .form-control {
+        background-color: #ffffff !important;
+        /* Warna input tetap putih */
+        color: #334155 !important;
+        /* Warna teks gelap agar terbaca jelas */
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 15px;
+    }
+
+    /* Warna placeholder agar tidak terlalu kontras */
+    .search-container .form-control::placeholder {
+        color: #94a3b8;
+    }
+
+    /* Konsistensi warna saat input diklik (fokus) */
+    .search-container .input-group:focus-within {
+        border-color: #64748b;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(100, 116, 139, 0.1);
+    }
+
+    .btn-search {
+        background-color: #334155 !important;
+        border: none !important;
+        color: white !important;
+        border-radius: 10px !important;
+        padding: 8px 20px !important;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    .btn-search:hover {
+        background-color: #1e293b !important;
     }
 
     /* Main Card */
@@ -241,6 +277,9 @@
 
                                     <button onclick="copyLink('<?= base_url('pengembalian') ?>')"
                                         class="btn-icon bg-light text-secondary"><i class="bi bi-link-45deg"></i></button>
+                                    <a href="<?= base_url('pengembalian/export') ?>" target="_blank" class="btn btn-primary">
+                                        Print PDF
+                                    </a>
                                 </div>
                             </td>
                         </tr>

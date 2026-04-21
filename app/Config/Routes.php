@@ -84,3 +84,12 @@ $routes->post('/kategori/simpan', 'KategoriController::simpan');
 $routes->get('/kategori/edit/(:num)', 'KategoriController::edit/$1');
 $routes->post('/kategori/update/(:num)', 'KategoriController::update/$1');
 $routes->post('/kategori/delete/(:num)', 'KategoriController::delete/$1');
+
+// Backup database
+$routes->get('/backup', 'Backup::index');
+
+// Restore database
+$routes->get('/restore', 'Restore::index');
+$routes->post('/restore/auth', 'Restore::auth');
+$routes->get('/restore/form', 'Restore::form');
+$routes->post('/restore/process', 'Restore::process');
