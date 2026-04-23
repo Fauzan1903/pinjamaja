@@ -146,6 +146,6 @@ class PengembalianController extends BaseController
 
         $this->peminjamanModel->delete($id);
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        return redirect()->to('/pengembalian ')->with('success', 'Data berhasil dihapus');
     }
 }

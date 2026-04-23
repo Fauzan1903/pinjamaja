@@ -131,6 +131,7 @@
                     <i class="bi bi-shield-check me-1"></i> <?= isset($user) ? ($user['role'] ?? '-') : '-' ?>
                 </div>
 
+
                 <hr class="my-4 opacity-50">
 
                 <div class="contact-grid">
@@ -157,10 +158,17 @@
                     </div>
                 </div>
 
-                <div class="mt-5">
+                <div class="mt-5 d-flex justify-content-center gap-3 flex-wrap">
                     <a class="btn btn-primary btn-edit-wide shadow-sm" href="<?= base_url('profile/edit') ?>">
                         <i class="bi bi-pencil-square me-2"></i> Edit Profil
                     </a>
+
+                    <?php if (session()->get('role') == 'admin') : ?>
+                        <a href="<?= base_url('/backup') ?>" class="btn btn-outline-success btn-edit-wide shadow-sm">
+                            <i class="bi bi-download me-2"></i> Backup Database
+                        </a>
+                    <?php endif; ?>
+
                 </div>
 
             </div>

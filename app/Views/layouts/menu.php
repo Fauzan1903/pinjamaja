@@ -9,32 +9,37 @@
 
         <div class="text-center mb-4">
             <!-- FOTO USER -->
-            <div class="text-center mb-4 dropdown">
-                <a class="d-block text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
-                    <!-- FOTO -->
+            <div class="avatar-container dropdown">
+                <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
                     <?php if (session()->get('foto')): ?>
-                        <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" class="rounded-circle mb-2" width="70" height="70" style="object-fit: cover;">
+                        <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" class="rounded-circle shadow-sm" width="70" height="70" style="object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
                     <?php else: ?>
-                        <img src="<?= base_url('assets/img/user.png') ?>" class="rounded-circle mb-2" width="60">
+                        <img src="<?= base_url('assets/img/user.png') ?>" class="rounded-circle shadow-sm" width="65">
                     <?php endif; ?>
-
-                    <!-- NAMA -->
-                    <div><strong><?= session()->get('nama') ?></strong></div>
-                    <small class="text-muted">Masuk sebagai: <?= session()->get('role') ?></small>
                 </a>
-                <?php $idu = session('id'); ?>
 
-                <!-- DROPDOWN MENU -->
-                <ul class="dropdown-menu text-center">
+                <ul class="dropdown-menu dropdown-menu-dark shadow border-0 p-2 mt-2" style="border-radius: 15px; min-width: 200px;">
                     <li>
-                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
-                            <i class="bi bi-person"></i> Lihat Profil
+                        <h6 class="dropdown-header">Menu Akun</h6>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-3 p-2" href="<?= base_url('profile/edit') ?>">
+                            <i class="bi bi-person-gear me-2"></i> Pengaturan Profil
                         </a>
                     </li>
-
+                    <?php if (session()->get('role') == 'admin') : ?>
+                        <li>
+                            <a class="dropdown-item rounded-3 p-2 text-success" href="<?= base_url('/backup') ?>">
+                                <i class="bi bi-database-down me-2"></i> Backup Data
+                            </a>
+                        </li>
+                    <?php endif; ?>
                     <li>
-                        <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">
-                            <i class="bi bi-box-arrow-right"></i> Logout
+                        <hr class="dropdown-divider border-secondary">
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-3 p-2 text-danger" href="<?= base_url('logout') ?>">
+                            <i class="bi bi-box-arrow-right me-2"></i> Keluar
                         </a>
                     </li>
                 </ul>
@@ -86,14 +91,8 @@
 
             <hr>
 
-            <li class="nav-item">
-                <a href="<?= base_url('logout') ?>" class="nav-link text-danger">
-                    <i class="bi bi-box-arrow-left"></i> Logout
-                </a>
-            </li>
-            <?php if (session()->get('role') == 'admin') : ?>
-                <a href="<?= base_url('/backup') ?>" class="nav-link text-success"><i class="bi bi-download"></i>Backup Database</a>
-            <?php endif; ?>
+
+
         </ul>
 
     </div>

@@ -125,7 +125,8 @@
             <div class="card p-3">
 
                 <div class="card-header">
-                    <div class="icon-box">🔐</div>
+                    <div class="icon-box"><img src="<?= base_url('assets/img/favicon.png') ?>" width="60">
+                    </div>
                     <h4 class="title mt-2">Akses Terbatas</h4>
                     <p class="text-muted small">Fitur pemulihan memerlukan otentikasi password sistem.</p>
                 </div>
