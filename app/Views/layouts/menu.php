@@ -5,7 +5,7 @@
 
         <!-- LOGO -->
         <div class="d-flex align-items-center gap-2">
-            <img src="<?= base_url('assets/img/vaficon.png') ?>" width="40">
+            <img src="<?= base_url('assets/img/LOL.png') ?>" width="40">
             <strong class="text-white">PinjaminAja</strong>
         </div>
 
