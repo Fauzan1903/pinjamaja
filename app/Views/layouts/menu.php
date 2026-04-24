@@ -1,74 +1,39 @@
 <div id="sidebar" class="sidebar no-print">
-    <div class="p-3">
+
+    <!-- KIRI (LOGO + MENU) -->
+    <div class="d-flex align-items-center gap-4 w-100">
 
         <!-- LOGO -->
-        <div class="text-center mb-4">
-            <img src="<?= base_url('assets/img/vaficon.png') ?>" width="60">
-            <h5>PinjaminAja</h5>
+        <div class="d-flex align-items-center gap-2">
+            <img src="<?= base_url('assets/img/vaficon.png') ?>" width="40">
+            <strong class="text-white">PinjaminAja</strong>
         </div>
 
-        <div class="text-center mb-4">
-            <!-- FOTO USER -->
-            <div class="avatar-container dropdown">
-                <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
-                    <?php if (session()->get('foto')): ?>
-                        <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" class="rounded-circle shadow-sm" width="70" height="70" style="object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
-                    <?php else: ?>
-                        <img src="<?= base_url('assets/img/user.png') ?>" class="rounded-circle shadow-sm" width="65">
-                    <?php endif; ?>
-                </a>
-
-                <ul class="dropdown-menu dropdown-menu-dark shadow border-0 p-2 mt-2" style="border-radius: 15px; min-width: 200px;">
-                    <li>
-                        <h6 class="dropdown-header">Menu Akun</h6>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-3 p-2" href="<?= base_url('profile/edit') ?>">
-                            <i class="bi bi-person-gear me-2"></i> Pengaturan Profil
-                        </a>
-                    </li>
-                    <?php if (session()->get('role') == 'admin') : ?>
-                        <li>
-                            <a class="dropdown-item rounded-3 p-2 text-success" href="<?= base_url('/backup') ?>">
-                                <i class="bi bi-database-down me-2"></i> Backup Data
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                    <li>
-                        <hr class="dropdown-divider border-secondary">
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-3 p-2 text-danger" href="<?= base_url('logout') ?>">
-                            <i class="bi bi-box-arrow-right me-2"></i> Keluar
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <ul class="nav flex-column">
+        <!-- MENU -->
+        <ul class="nav">
             <li class="nav-item">
                 <a href="<?= base_url('dashboard') ?>" class="nav-link <?= uri_string() == 'dashboard' ? 'active' : '' ?>">
-                    <i class="bi bi-speedometer2"></i> Dashboard
+                    <i class="bi bi-house"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="<?= base_url('alat') ?>" class="nav-link <?= uri_string() == 'alat' ? 'active' : '' ?>">
-                    <i class="bi bi-tools"></i> <span>Data Alat</span>
+                    <i class="bi bi-tools"></i> Data Alat
                 </a>
             </li>
 
             <?php if (session()->get('role') == 'petugas'): ?>
-                <li class="nav-item">
-                    <a href="<?= base_url('notifikasi') ?>" class="nav-link <?= uri_string() == 'notifikasi' ? 'active' : '' ?> position-relative">
-                        <i class="bi bi-bell"></i> <span>Notifikasi</span>
-                        <span id="notif-counter" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="display: none;">0</span>
+                <li class="nav-item position-relative">
+                    <a href="<?= base_url('notifikasi') ?>" class="nav-link <?= uri_string() == 'notifikasi' ? 'active' : '' ?>">
+                        <i class="bi bi-bell"></i> Notifikasi
+                        <span id="notif-counter" class="badge bg-danger position-absolute top-0 start-100 translate-middle" style="display:none;">0</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="<?= base_url('approval') ?>" class="nav-link <?= uri_string() == 'approval' ? 'active' : '' ?>">
-                        <i class="bi bi-check-circle"></i> <span>Approval</span>
+                        <i class="bi bi-check-circle"></i> Approval
                     </a>
                 </li>
             <?php endif; ?>
@@ -94,6 +59,47 @@
 
 
         </ul>
+
+
+        <!--  PROFILE KANAN -->
+        <div class="ms-auto dropdown">
+            <a href="#" data-bs-toggle="dropdown" class="d-flex align-items-center gap-2 text-white text-decoration-none">
+
+                <?php if (session()->get('foto')): ?>
+                    <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" class="rounded-circle" width="35" height="35" style="object-fit:cover;">
+                <?php else: ?>
+                    <img src="<?= base_url('assets/img/user.png') ?>" class="rounded-circle" width="35">
+                <?php endif; ?>
+
+                <span><?= session()->get('nama') ?></span>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                <li>
+                    <a class="dropdown-item" href="<?= base_url('profile/edit') ?>">
+                        <i class="bi bi-person-gear me-2"></i> Profil
+                    </a>
+                </li>
+
+                <?php if (session()->get('role') == 'admin') : ?>
+                    <li>
+                        <a class="dropdown-item text-success" href="<?= base_url('/backup') ?>">
+                            <i class="bi bi-database-down me-2"></i> Backup
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <li>
+                    <hr>
+                </li>
+
+                <li>
+                    <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">
+                        <i class="bi bi-box-arrow-right me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 </div>

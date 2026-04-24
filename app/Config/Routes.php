@@ -93,3 +93,5 @@ $routes->get('/restore', 'Restore::index');
 $routes->post('/restore/auth', 'Restore::auth');
 $routes->get('/restore/form', 'Restore::form');
 $routes->post('/restore/process', 'Restore::process');
+
+$routes->post('notifikasi/delete-all', 'NotifikasiController::deleteAll');

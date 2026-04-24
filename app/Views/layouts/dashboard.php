@@ -229,7 +229,7 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h3 class="welcome-text mb-1">Dashboard Overview</h3>
+            <h3 class="welcome-text mb-1">Dashboard</h3>
             <p class="text-muted mb-0">Selamat datang kembali, <strong><?= session()->get('nama') ?></strong></p>
         </div>
         <div class="text-end">

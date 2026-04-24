@@ -119,79 +119,85 @@
     }
 </style>
 
-<div class="container py-4">
-    <div class="card card-notif">
-        <div class="card-header-notif d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <div>
-                <h4 class="fw-bold mb-1 text-dark">Pusat Notifikasi</h4>
-                <p class="text-muted small mb-0">Lihat semua aktivitas dan peringatan akun Anda.</p>
-            </div>
-            <button id="mark-all-read" class="btn btn-outline-primary btn-action-notif shadow-sm">
-                <i class="bi bi-check2-all me-1"></i> Tandai Semua Dibaca
-            </button>
+<div class="card-header-notif d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <div>
+        <h4 class="fw-bold mb-1 text-dark">Pusat Notifikasi</h4>
+        <p class="text-muted small mb-0">Lihat semua aktivitas dan peringatan akun Anda.</p>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button id="mark-all-read" class="btn btn-outline-primary btn-action-notif shadow-sm">
+            <i class="bi bi-check2-all me-1"></i> Tandai Semua Dibaca
+        </button>
+
+        <button id="delete-all" class="btn btn-outline-danger btn-action-notif shadow-sm">
+            <i class="bi bi-trash3 me-1"></i> Hapus Semua
+        </button>
+    </div>
+</div>
+
+
+<div class="card-body p-0">
+    <?php if (empty($notifikasi)): ?>
+        <div class="text-center py-5">
+            <i class="bi bi-bell-slash text-muted opacity-25" style="font-size: 4rem;"></i>
+            <p class="mt-3 text-muted">Hening... Tidak ada notifikasi saat ini.</p>
         </div>
+    <?php else: ?>
+        <div class="list-group list-group-flush">
+            <?php foreach ($notifikasi as $notif):
+                $isDenda = strpos($notif['pesan'], 'Pemberitahuan Denda') !== false;
+                $isUnread = $notif['status'] == 'belum_dibaca';
+            ?>
+                <div class="list-group-item d-flex align-items-start gap-3 <?= $isUnread ? 'notif-unread' : '' ?> <?= $isDenda ? 'notif-denda' : '' ?>">
 
-        <div class="card-body p-0">
-            <?php if (empty($notifikasi)): ?>
-                <div class="text-center py-5">
-                    <i class="bi bi-bell-slash text-muted opacity-25" style="font-size: 4rem;"></i>
-                    <p class="mt-3 text-muted">Hening... Tidak ada notifikasi saat ini.</p>
-                </div>
-            <?php else: ?>
-                <div class="list-group list-group-flush">
-                    <?php foreach ($notifikasi as $notif):
-                        $isDenda = strpos($notif['pesan'], 'Pemberitahuan Denda') !== false;
-                        $isUnread = $notif['status'] == 'belum_dibaca';
-                    ?>
-                        <div class="list-group-item d-flex align-items-start gap-3 <?= $isUnread ? 'notif-unread' : '' ?> <?= $isDenda ? 'notif-denda' : '' ?>">
+                    <div class="icon-box <?= $isDenda ? 'icon-box-red' : 'icon-box-blue' ?>">
+                        <i class="bi <?= $isDenda ? 'bi-exclamation-octagon' : 'bi-bell-fill' ?> fs-5"></i>
+                    </div>
 
-                            <div class="icon-box <?= $isDenda ? 'icon-box-red' : 'icon-box-blue' ?>">
-                                <i class="bi <?= $isDenda ? 'bi-exclamation-octagon' : 'bi-bell-fill' ?> fs-5"></i>
-                            </div>
-
-                            <div class="flex-grow-1">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <p class="mb-0 notif-text <?= $isDenda ? 'fw-bold text-danger' : '' ?>">
-                                        <?= esc($notif['pesan']) ?>
-                                    </p>
-                                    <div class="ms-2">
-                                        <span class="badge-soft <?= $isUnread ? 'badge-soft-danger' : 'badge-soft-secondary' ?>">
-                                            <?= $isUnread ? 'Baru' : 'Dibaca' ?>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center gap-2 mt-1">
-                                    <small class="notif-time">
-                                        <i class="bi bi-clock me-1"></i> <?= date('d M Y, H:i', strtotime($notif['tanggal'])) ?>
-                                    </small>
-                                    <?php if ($isDenda): ?>
-                                        <span class="badge-soft badge-soft-warning small py-1 px-2" style="font-size: 10px;">
-                                            <i class="bi bi-cash-coin"></i> TAGIHAN
-                                        </span>
-                                    <?php endif; ?>
-                                </div>
-
-                                <div class="mt-3 d-flex gap-2">
-                                    <?php if ($isUnread): ?>
-                                        <button class="btn btn-sm btn-primary btn-action-notif mark-read" data-id="<?= $notif['id_notifikasi'] ?>">
-                                            Selesai Dibaca
-                                        </button>
-                                    <?php endif; ?>
-
-                                    <?php if (in_array(session()->get('role'), ['petugas'])): ?>
-                                        <button class="btn btn-sm btn-outline-danger btn-action-notif delete-notif" data-id="<?= $notif['id_notifikasi'] ?>">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    <?php endif; ?>
-                                </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <p class="mb-0 notif-text <?= $isDenda ? 'fw-bold text-danger' : '' ?>">
+                                <?= esc($notif['pesan']) ?>
+                            </p>
+                            <div class="ms-2">
+                                <span class="badge-soft <?= $isUnread ? 'badge-soft-danger' : 'badge-soft-secondary' ?>">
+                                    <?= $isUnread ? 'Baru' : 'Dibaca' ?>
+                                </span>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <small class="notif-time">
+                                <i class="bi bi-clock me-1"></i> <?= date('d M Y, H:i', strtotime($notif['tanggal'])) ?>
+                            </small>
+                            <?php if ($isDenda): ?>
+                                <span class="badge-soft badge-soft-warning small py-1 px-2" style="font-size: 10px;">
+                                    <i class="bi bi-cash-coin"></i> TAGIHAN
+                                </span>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="mt-3 d-flex gap-2">
+                            <?php if ($isUnread): ?>
+                                <button class="btn btn-sm btn-primary btn-action-notif mark-read" data-id="<?= $notif['id_notifikasi'] ?>">
+                                    Selesai Dibaca
+                                </button>
+                            <?php endif; ?>
+
+                            <?php if (in_array(session()->get('role'), ['petugas'])): ?>
+                                <button class="btn btn-sm btn-outline-danger btn-action-notif delete-notif" data-id="<?= $notif['id_notifikasi'] ?>">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
-            <?php endif; ?>
+            <?php endforeach; ?>
         </div>
-    </div>
+    <?php endif; ?>
+</div>
+</div>
 </div>
 
 <script>
@@ -279,6 +285,31 @@
                     }
                 });
         }
+        document.getElementById('delete-all').addEventListener('click', function() {
+            if (confirm('Yakin ingin menghapus SEMUA notifikasi?')) {
+
+                fetch('<?= base_url('notifikasi/delete-all') ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.querySelector('.list-group').innerHTML = `
+                        <div class="text-center py-5">
+                            <i class="bi bi-bell-slash text-muted opacity-25" style="font-size: 4rem;"></i>
+                            <p class="mt-3 text-muted">Semua notifikasi telah dihapus.</p>
+                        </div>
+                    `;
+                            updateCounter();
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        });
     });
 </script>
 <?= $this->endSection() ?>

@@ -59,4 +59,17 @@ class NotifikasiController extends BaseController
 
         return $this->response->setJSON(['success' => true]);
     }
+    public function deleteAll()
+    {
+        if (!in_array(session()->get('role'), ['admin', 'petugas'])) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Akses ditolak']);
+        }
+
+        $db = \Config\Database::connect();
+
+        // 🔥 hapus semua notif (bisa disesuaikan per user)
+        $db->table('notifikasi')->truncate();
+
+        return $this->response->setJSON(['success' => true]);
+    }
 }
