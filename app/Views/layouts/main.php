@@ -9,7 +9,6 @@
     <link href="<?= base_url('assets/bootstrap-icons-1.13.1/bootstrap-icons.css') ?>" rel="stylesheet">
     <link rel="icon" href="<?= base_url('assets/img/vaficon.png') ?>">
 
-
     <style>
         /* 1. Pengaturan Dasar & Font Modern */
         :root {
@@ -52,7 +51,6 @@
             /* Mencegah overflow */
         }
 
-        /* 3. Link Menu Sidebar */
         .sidebar .nav-link {
             color: var(--sidebar-color);
             padding: 12px 20px;
