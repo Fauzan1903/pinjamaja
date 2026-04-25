@@ -7,7 +7,7 @@
     <!-- Bootstrap -->
     <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/bootstrap-icons-1.13.1/bootstrap-icons.css') ?>" rel="stylesheet">
-    <link rel="icon" href="<?= base_url('assets/img/LOL.png') ?>">
+    <link rel="icon" href="<?= base_url('assets/img/vaficon.png') ?>">
 
 
     <style>

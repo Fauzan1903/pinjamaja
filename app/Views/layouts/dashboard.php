@@ -305,7 +305,7 @@
                             <h2 class="mb-0 fw-bold"><?= $total_user ?? 0 ?></h2>
                         </div>
                         <div class="stat-icon bg-light-success">
-                            <i class="bi bi-people fs-2"></i>
+                            <i class="bi bi-people-fill fs-2"></i>
                         </div>
                     </div>
                 </div>
@@ -361,7 +361,6 @@
         <div class="card-header bg-white py-3 border-0">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="mb-0 fw-bold"><i class="bi bi-clock-history me-2"></i> Aktivitas Terbaru</h5>
-                <button class="btn btn-sm btn-outline-primary">Lihat Semua</button>
             </div>
         </div>
         <div class="card-body p-0">
