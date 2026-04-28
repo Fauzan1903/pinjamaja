@@ -144,7 +144,7 @@
 
                 <div class="form-group-custom">
                     <label class="form-label-custom">Nama Peminjam</label>
-                    <input type="text" name="nama" class="form-control-custom" placeholder="Masukkan nama lengkap..." value="<?= old('nama'); ?>" maxlength="30" required>
+                    <input type="text" name="nama" class="form-control-custom" value="<?= esc(old('nama', session()->get('nama'))); ?>" maxlength="30" readonly>
                 </div>
 
                 <div class="form-group-custom">
@@ -153,7 +153,7 @@
                         <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
                             <i class="bi bi-plus-minus text-muted"></i>
                         </span>
-                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= old('jumlah', 1); ?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
+                        <input type="number" name="jumlah[<?= esc($alat['id_alat']); ?>" class="form-control-custom rounded-start-0" value="<?= old('jumlah_alat')['id_alat']?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
                     </div>
                 </div>
 

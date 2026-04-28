@@ -45,12 +45,12 @@ class PinjamController extends BaseController
             return redirect()->back()->withInput()->with('error', implode(', ', $this->validator->getErrors()));
         }
 
-        $id_alat = (int) $this->request->getPost('id_alat');
+        $alat = (int) $this->request->getPost('id_alat');
         $jumlah = (int) $this->request->getPost('jumlah');
         $nama = $this->request->getPost('nama');
 
         // Ambil data alat
-        $alat = $this->AlatModel->find($id_alat);
+        $alat = $this->AlatModel->find($alat);
 
         if (!$alat) {
             return redirect()->back()->withInput()->with('error', 'Alat tidak ditemukan.');
@@ -61,7 +61,7 @@ class PinjamController extends BaseController
         // Simpan peminjaman dengan status ditunda
         $peminjamanData = [
             'id_user' => session('id_user'),
-            'id_alat' => $id_alat,
+            'id_alat' => $alat['id_alat'],
             'nama_peminjam' => $nama,
             'jumlah' => $jumlah,
             'data_peminjam' => date('Y-m-d'),
