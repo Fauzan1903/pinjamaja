@@ -120,12 +120,12 @@
             <div class="tool-info-box d-flex justify-content-between align-items-center">
                 <div>
                     <span class="info-label">Nama Alat</span>
-                    <span class="info-value"><?= esc($alat['nama_alat']); ?></span>
+                    <span class="info-value"><?= esc('nama_alat'); ?></span>
                 </div>
                 <div class="text-end">
                     <span class="info-label">Stok Tersedia</span>
                     <span class="badge badge-gray rounded-pill px-3">
-                        <?= esc($alat['persediaan']); ?> Unit
+                        <?= esc('persediaan'); ?> Unit
                     </span>
                 </div>
             </div>
@@ -140,7 +140,7 @@
             <form action="<?= base_url('pinjam/simpan') ?>" method="post">
                 <?= csrf_field(); ?>
 
-                <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
+                <input type="hidden" name="id_alat" value="<?= esc('id_alat'); ?>">
 
                 <div class="form-group-custom">
                     <label class="form-label-custom">Nama Peminjam</label>
@@ -153,7 +153,7 @@
                         <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
                             <i class="bi bi-plus-minus text-muted"></i>
                         </span>
-                        <input type="number" name="jumlah[<?= esc($alat['id_alat']); ?>" class="form-control-custom rounded-start-0" value="<?= old('jumlah_alat')['id_alat']?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
+                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= esc(old('jumlah')); ?>" min="1">
                     </div>
                 </div>
 

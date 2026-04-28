@@ -45,18 +45,26 @@ class PinjamController extends BaseController
             return redirect()->back()->withInput()->with('error', implode(', ', $this->validator->getErrors()));
         }
 
-        $alat = (int) $this->request->getPost('id_alat');
+        $idAlat = (int) $this->request->getPost('id_alat');
         $jumlah = (int) $this->request->getPost('jumlah');
-        $nama = $this->request->getPost('nama');
+        $nama = trim((string) $this->request->getPost('nama'));
 
         // Ambil data alat
-        $alat = $this->AlatModel->find($alat);
+        $alat = $this->AlatModel->find($idAlat);
 
         if (!$alat) {
             return redirect()->back()->withInput()->with('error', 'Alat tidak ditemukan.');
         }
 
         $stokTersedia = (int) $alat['persediaan'];
+
+        if ($stokTersedia <= 0) {
+            return redirect()->back()->withInput()->with('error', 'Stok alat sedang habis.');
+        }
+
+        if ($jumlah > $stokTersedia) {
+            return redirect()->back()->withInput()->with('error', "Jumlah pinjam melebihi stok tersedia ({$stokTersedia}).");
+        }
 
         // Simpan peminjaman dengan status ditunda
         $peminjamanData = [
