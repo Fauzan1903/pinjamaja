@@ -153,7 +153,7 @@
                         <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
                             <i class="bi bi-plus-minus text-muted"></i>
                         </span>
-                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= esc(old('jumlah')); ?>" min="1">
+                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= esc('jumlah'); ?>" min="1">
                     </div>
                 </div>
 
