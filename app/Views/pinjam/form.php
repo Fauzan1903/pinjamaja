@@ -120,12 +120,12 @@
             <div class="tool-info-box d-flex justify-content-between align-items-center">
                 <div>
                     <span class="info-label">Nama Alat</span>
-                    <span class="info-value"><?= esc('nama_alat'); ?></span>
+                    <span class="info-value"><?= esc($alat['nama_alat']); ?></span>
                 </div>
                 <div class="text-end">
                     <span class="info-label">Stok Tersedia</span>
                     <span class="badge badge-gray rounded-pill px-3">
-                        <?= esc('persediaan'); ?> Unit
+                        <?= esc($alat['persediaan']); ?> Unit
                     </span>
                 </div>
             </div>
@@ -140,11 +140,11 @@
             <form action="<?= base_url('pinjam/simpan') ?>" method="post">
                 <?= csrf_field(); ?>
 
-                <input type="hidden" name="id_alat" value="<?= esc('id_alat'); ?>">
+                <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
 
                 <div class="form-group-custom">
                     <label class="form-label-custom">Nama Peminjam</label>
-                    <input type="text" name="nama" class="form-control-custom" value="<?= esc(old('nama', session()->get('nama'))); ?>" maxlength="30" readonly>
+                    <input type="text" name="nama" class="form-control-custom" placeholder="Masukkan nama lengkap..." value="<?= old('nama'); ?>" maxlength="30" required>
                 </div>
 
                 <div class="form-group-custom">
@@ -153,7 +153,7 @@
                         <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
                             <i class="bi bi-plus-minus text-muted"></i>
                         </span>
-                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= esc('jumlah'); ?>" min="1">
+                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= old('jumlah', 1); ?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
                     </div>
                 </div>
 
