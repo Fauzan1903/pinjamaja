@@ -15,27 +15,33 @@
 
     ```
     <?php $no = 1;
-    foreach ($peminjaman as $p): ?>
+    if (isset($peminjaman) && $peminjaman):
+        foreach ($peminjaman as $p): ?>
+            <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $p['nama_alat'] ?></td>
+                <td><?= $p['nama_peminjam'] ?></td>
+                <td><?= $p['jumlah'] ?></td>
+                <td><?= $p['tanggal_pinjam'] ?></td>
+                <td><?= $p['tanggal_kembali'] ?></td>
+                <td><?= $p['status'] ?></td>
+                <td>Rp <?= $p['denda'] ?></td>
+                <td>
+                    <?php if ($p['status'] == 'dipinjam'): ?>
+                        <a href="<?= base_url('kembalikan/' . $p['id_peminjaman']) ?>">
+                            Kembalikan
+                        </a>
+                    <?php else: ?>
+                        -
+                    <?php endif; ?>
+                </td>
+            </tr>
+        <?php endforeach;
+    else: ?>
         <tr>
-            <td><?= $no++ ?></td>
-            <td><?= $p['nama_alat'] ?></td>
-            <td><?= $p['nama_peminjam'] ?></td>
-            <td><?= $p['jumlah'] ?></td>
-            <td><?= $p['tanggal_pinjam'] ?></td>
-            <td><?= $p['tanggal_kembali'] ?></td>
-            <td><?= $p['status'] ?></td>
-            <td>Rp <?= $p['denda'] ?></td>
-            <td>
-                <?php if ($p['status'] == 'dipinjam'): ?>
-                    <a href="<?= base_url('kembalikan/' . $p['id_peminjaman']) ?>">
-                        Kembalikan
-                    </a>
-                <?php else: ?>
-                    -
-                <?php endif; ?>
-            </td>
+            <td colspan="9">Tidak ada data peminjaman.</td>
         </tr>
-    <?php endforeach; ?>
+    <?php endif; ?>
     ```
 
 </table>

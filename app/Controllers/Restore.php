@@ -53,7 +53,7 @@ class Restore extends Controller
         }
 
         // TAMBAHAN : Otomatis membuat database jika belum ada
-        $dbName = 'pustaka'; // Sesuaikan dengan nama database
+        $dbName = 'pinjamaja'; // Sesuaikan dengan nama database
 
         $conn = new \mysqli('localhost', 'root', '', '');
 

@@ -138,11 +138,13 @@
                             <div class="input-group input-group-custom">
                                 <select name="id_kategori" class="form-control" required>
                                     <option value="">-- Pilih Kategori --</option>
-                                    <?php foreach ($kategori as $k): ?>
-                                        <option value="<?= $k['id_kategori'] ?>">
-                                            <?= $k['nama_kategori'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
+                                    <?php if (isset($kategori) && $kategori): ?>
+                                        <?php foreach ($kategori as $k): ?>
+                                            <option value="<?= $k['id_kategori'] ?>">
+                                                <?= $k['nama_kategori'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </select>
                                 <button type="button" class="btn btn-add-cat" data-bs-toggle="modal" data-bs-target="#modalKategori">
                                     <i class="bi bi-plus-lg"></i>

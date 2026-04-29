@@ -244,7 +244,7 @@
                     <div class="row align-items-center">
                         <div class="col-auto">
                             <?php if (session()->get('foto')): ?>
-                                <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" alt="Foto user" class="rounded-circle profile-img-container" width="100" height="100" style="object-fit: cover;">
+                                <img src="<?= base_url('upload/users/' . session()->get('foto')) ?>" alt="Foto user" class="rounded-circle profile-img-container" width="100" height="100" style="object-fit: cover;">
                             <?php else: ?>
                                 <div class="rounded-circle bg-light d-flex justify-content-center align-items-center profile-img-container" style="width:100px; height:100px;">
                                     <i class="bi bi-person text-secondary" style="font-size: 3rem;"></i>

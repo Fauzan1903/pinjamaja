@@ -173,7 +173,7 @@
                                 <td>
                                     <div class="d-flex align-items-center gap-3">
                                         <?php if ($u['foto']): ?>
-                                            <img src="<?= base_url('uploads/users/' . $u['foto']) ?>" class="user-avatar" />
+                                            <img src="<?= base_url('upload/users/' . $u['foto']) ?>" class="user-avatar" />
                                         <?php else: ?>
                                             <div class="user-avatar d-flex align-items-center justify-content-center bg-light text-muted">
                                                 <i class="bi bi-person"></i>

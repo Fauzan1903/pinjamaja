@@ -129,18 +129,18 @@
             </div>
 
             <div class="card-body">
-                <form action="<?= base_url('users/update/' . $user['id_user']) ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('users/update/' . $users['id_user']) ?>" method="post" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Nama Lengkap</label>
-                            <input type="text" name="nama" value="<?= $user['nama'] ?>" class="form-control" placeholder="Masukkan nama lengkap" required>
+                            <input type="text" name="nama" value="<?= $users['nama'] ?>" class="form-control" placeholder="Masukkan nama lengkap" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Username</label>
-                            <input type="text" name="username" value="<?= $user['username'] ?>" class="form-control" placeholder="Username unik" required>
+                            <input type="text" name="username" value="<?= $users['username'] ?>" class="form-control" placeholder="Username unik" required>
                         </div>
                     </div>
 
@@ -149,7 +149,7 @@
                             <label class="form-label">Hak Akses (Role)</label>
                             <select name="role" class="form-select">
                                 <option value="Petugas" <?= $user['role'] == 'Petugas' ? 'selected' : '' ?>>Petugas</option>
-                                <option value="user" <?= $user['role'] == 'user' ? 'selected' : '' ?>>User (Peminjam)</option>
+                                <option value="user" <?= $users['role'] == 'user' ? 'selected' : '' ?>>User (Peminjam)</option>
                             </select>
                         </div>
 
@@ -180,8 +180,8 @@
                         <label class="form-label">Foto Profil</label>
                         <div class="user-preview-box d-flex align-items-center gap-4">
                             <div class="text-center">
-                                <?php if ($user['foto']): ?>
-                                    <img src="<?= base_url('uploads/users/' . $user['foto']) ?>" width="80" height="80" class="img-preview mb-1">
+                                <?php if ($users['foto']): ?>
+                                    <img src="<?= base_url('upload/users/' . $users['foto']) ?>" width="80" height="80" class="img-preview mb-1">
                                     <p class="mb-0 small text-muted fw-bold">Foto Saat Ini</p>
                                 <?php else: ?>
                                     <div class="bg-secondary rounded d-flex align-items-center justify-content-center text-white" style="width:80px; height:80px;">

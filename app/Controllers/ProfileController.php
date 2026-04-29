@@ -29,16 +29,17 @@ class ProfileController extends BaseController
         return view('profile/edit', ['user' => $user]);
     }
 
-    public function update()
+    public function update($id = null)
     {
         $model = new UsersModel();
-        $id = session()->get('id_user');
+        if (!$id) {
+            $id = session()->get('id_user');
+        }
 
         $rules = [
             'nama' => 'required|min_length[3]',
-            // 🔥 perbaikan di sini (pakai id_user, bukan id)
             'username' => 'required|min_length[3]|is_unique[users.username,id_user,' . $id . ']',
-            'foto' => 'permit_empty|max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+            'foto' => 'permit_empty|max_size[foto,2048]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/gif]',
             'no_hp' => 'permit_empty|regex_match[/^[0-9+\-\s]+$/]|min_length[10]|max_length[15]',
             'email' => 'permit_empty|valid_email',
         ];
@@ -49,10 +50,31 @@ class ProfileController extends BaseController
 
         $file = $this->request->getFile('foto');
         $newName = null;
+        $uploadPath = FCPATH . 'upload' . DIRECTORY_SEPARATOR . 'users';
+
+        // Buat folder jika belum ada
+        if (!is_dir($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
+        // Ambil data user lama untuk menghapus foto lama jika ada
+        $userLama = $model->find($id);
 
         if ($file && $file->isValid() && !$file->hasMoved()) {
+            // Hapus foto lama jika ada
+            if ($userLama && !empty($userLama['foto'])) {
+                $oldPhotoPath = $uploadPath . DIRECTORY_SEPARATOR . $userLama['foto'];
+                if (file_exists($oldPhotoPath)) {
+                    unlink($oldPhotoPath);
+                }
+            }
+
             $newName = time() . '_' . $file->getRandomName();
-            $file->move('uploads/users', $newName);
+            if ($file->move($uploadPath, $newName)) {
+                // Upload berhasil
+            } else {
+                return redirect()->back()->withInput()->with('errors', ['foto' => 'Gagal mengupload file. Pastikan folder uploads memiliki izin tulis.']);
+            }
         }
 
         $data = [
@@ -66,9 +88,8 @@ class ProfileController extends BaseController
             $data['foto'] = $newName;
         }
 
-        // 🔥 pastikan update pakai primary key yang benar
-        $model->where('id_user', $id)->set($data)->update();
+        $model->update($id, $data);
 
-        return redirect()->back()->with('success', 'Profile updated successfully');
+        return redirect()->to('/profile')->with('success', 'Profil berhasil diperbarui');
     }
 }

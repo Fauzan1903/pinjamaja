@@ -80,6 +80,7 @@
             margin-bottom: 8px;
             letter-spacing: -1px;
             background: linear-gradient(to bottom, #fff, #cbd5e1);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }

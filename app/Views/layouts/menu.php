@@ -66,7 +66,7 @@
             <a href="#" data-bs-toggle="dropdown" class="d-flex align-items-center gap-2 text-white text-decoration-none">
 
                 <?php if (session()->get('foto')): ?>
-                    <img src="<?= base_url('uploads/users/' . session()->get('foto')) ?>" class="rounded-circle" width="35" height="35" style="object-fit:cover;">
+                    <img src="<?= base_url('upload/users/' . session()->get('foto')) ?>" class="rounded-circle" width="35" height="35" style="object-fit:cover;">
                 <?php else: ?>
                     <img src="<?= base_url('assets/img/user.png') ?>" class="rounded-circle" width="35">
                 <?php endif; ?>

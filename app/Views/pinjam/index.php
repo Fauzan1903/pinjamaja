@@ -10,17 +10,24 @@
 
     <div class="card-body">
 
-        <p><?= esc($alat['nama_alat']); ?></p>
+        <?php if (isset($alat) && $alat): ?>
 
-        <form action="<?= base_url('pinjam/simpan') ?>" method="post">
-            <?= csrf_field() ?>
-            <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
+            <p><?= esc($alat['nama_alat']); ?></p>
 
-            <input type="text" name="nama" placeholder="Nama Peminjam" value="<?= old('nama'); ?>" required><br>
-            <input type="number" name="jumlah" placeholder="Jumlah" value="<?= old('jumlah', 1); ?>" min="1" required><br>
+            <form action="<?= base_url('pinjam/simpan') ?>" method="post">
+                <?= csrf_field() ?>
+                <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
 
-            <button type="submit">Pinjam</button>
-        </form>
+                <input type="text" name="nama" placeholder="Nama Peminjam" value="<?= old('nama'); ?>" required><br>
+                <input type="number" name="jumlah" placeholder="Jumlah" value="<?= old('jumlah', 1); ?>" min="1" required><br>
+
+                <button type="submit">Pinjam</button>
+            </form>
+
+        <?php else: ?>
+            <p>Data alat tidak ditemukan.</p>
+        <?php endif; ?>
+
     </div>
 </div>
 <?= $this->endSection() ?>

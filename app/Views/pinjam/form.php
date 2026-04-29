@@ -117,55 +117,67 @@
         </div>
 
         <div class="card-body p-4">
-            <div class="tool-info-box d-flex justify-content-between align-items-center">
-                <div>
-                    <span class="info-label">Nama Alat</span>
-                    <span class="info-value"><?= esc($alat['nama_alat']); ?></span>
-                </div>
-                <div class="text-end">
-                    <span class="info-label">Stok Tersedia</span>
-                    <span class="badge badge-gray rounded-pill px-3">
-                        <?= esc($alat['persediaan']); ?> Unit
-                    </span>
-                </div>
-            </div>
 
-            <?php if (session()->getFlashdata('error')): ?>
-                <div class="alert alert-danger border-0 shadow-sm rounded-3 mb-4 d-flex align-items-center" role="alert">
-                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                    <div><?= esc(session()->getFlashdata('error')); ?></div>
-                </div>
-            <?php endif; ?>
+            <?php if (isset($alat) && $alat): ?>
 
-            <form action="<?= base_url('pinjam/simpan') ?>" method="post">
-                <?= csrf_field(); ?>
-
-                <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
-
-                <div class="form-group-custom">
-                    <label class="form-label-custom">Nama Peminjam</label>
-                    <input type="text" name="nama" class="form-control-custom" placeholder="Masukkan nama lengkap..." value="<?= old('nama'); ?>" maxlength="30" required>
-                </div>
-
-                <div class="form-group-custom">
-                    <label class="form-label-custom">Jumlah Pinjam</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
-                            <i class="bi bi-plus-minus text-muted"></i>
+                <div class="tool-info-box d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="info-label">Nama Alat</span>
+                        <span class="info-value"><?= esc($alat['nama_alat']); ?></span>
+                    </div>
+                    <div class="text-end">
+                        <span class="info-label">Stok Tersedia</span>
+                        <span class="badge badge-gray rounded-pill px-3">
+                            <?= esc($alat['persediaan']); ?> Unit
                         </span>
-                        <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= old('jumlah', 1); ?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
                     </div>
                 </div>
 
-                <div class="mt-4 d-flex gap-2">
-                    <button type="submit" class="btn btn-action btn-submit flex-grow-1">
-                        <i class="bi bi-check-circle-fill me-2"></i>Konfirmasi Pinjam
-                    </button>
-                    <a href="<?= base_url('alat') ?>" class="btn btn-action btn-light flex-grow-1 border">
-                        Kembali
-                    </a>
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger border-0 shadow-sm rounded-3 mb-4 d-flex align-items-center" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <div><?= esc(session()->getFlashdata('error')); ?></div>
+                    </div>
+                <?php endif; ?>
+
+                <form action="<?= base_url('pinjam/simpan') ?>" method="post">
+                    <?= csrf_field(); ?>
+
+                    <input type="hidden" name="id_alat" value="<?= esc($alat['id_alat']); ?>">
+
+                    <div class="form-group-custom">
+                        <label class="form-label-custom">Nama Peminjam</label>
+                        <input type="text" name="nama" class="form-control-custom" placeholder="Masukkan nama lengkap..." value="<?= old('nama'); ?>" maxlength="30" required>
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label class="form-label-custom">Jumlah Pinjam</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 rounded-start-3" style="border: 2px solid #f3f4f6;">
+                                <i class="bi bi-plus-minus text-muted"></i>
+                            </span>
+                            <input type="number" name="jumlah" class="form-control-custom rounded-start-0" value="<?= old('jumlah', 1); ?>" min="1" max="<?= esc($alat['persediaan']); ?>" required>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <button type="submit" class="btn btn-action btn-submit flex-grow-1">
+                            <i class="bi bi-check-circle-fill me-2"></i>Konfirmasi Pinjam
+                        </button>
+                        <a href="<?= base_url('alat') ?>" class="btn btn-action btn-light flex-grow-1 border">
+                            Kembali
+                        </a>
+                    </div>
+                </form>
+
+            <?php else: ?>
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Data Alat Tidak Ditemukan</h4>
+                    <p>Alat yang Anda cari tidak tersedia.</p>
+                    <a href="<?= base_url('/alat') ?>" class="btn btn-primary">Kembali ke Daftar Alat</a>
                 </div>
-            </form>
+            <?php endif; ?>
+
         </div>
     </div>
 </div>
