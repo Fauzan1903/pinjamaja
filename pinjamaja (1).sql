@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Apr 2026 pada 12.26
+-- Waktu pembuatan: 28 Apr 2026 pada 13.21
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -42,12 +42,12 @@ CREATE TABLE `alat` (
 
 INSERT INTO `alat` (`id_alat`, `nama_alat`, `deskripsi`, `persediaan`, `foto`, `id_kategori`) VALUES
 (33, 'sapu lidi', 'y7i', 0, '1776217295_4cfe9969799d23b0e957.jpg', 1),
-(36, 'sapu', 'rt', 10, '1776654101_3d03f0539b392aa903c6.jpg', 1),
+(36, 'sapu', 'rt', 9, '1776654101_3d03f0539b392aa903c6.jpg', 1),
 (38, 'pengki', 'masih baru', 900, '1776654087_dd4d5876ade0d62b3c24.jpg', 1),
 (40, 'Laptop', 'Masih mulus', 15, '1776451570_58d36618a5810ef7c191.jpg', 2),
 (41, 'Monitor', 'merek hp', 0, '1776790993_90f3e7e12192a970257b.png', 13),
 (42, 'Laptop', 'merk lenovo', 0, '1776957669_ee69c65e8536a33ac01b.jpeg', 2),
-(43, 'Router', 'Router 5G', 0, '1777294875_42b3b996ea11d180ad2c.png', 2);
+(44, 'Laptop', 'alus', 0, '1777374312_b69b0d8feea38b5d85e4.png', 2);
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,13 @@ INSERT INTO `notifikasi` (`id_notifikasi`, `id_user`, `pesan`, `tanggal`, `statu
 (10, NULL, 'Alat dikembalikan: Laptop oleh user, jumlah: 10', '2026-04-28 09:36:23', 'dibaca'),
 (11, 6, 'Permintaan peminjaman: pengki oleh user, jumlah: 1', '2026-04-28 09:49:13', 'dibaca'),
 (12, 2, 'Peminjaman alat pengki telah disetujui. Silakan ambil alat di tempat yang ditentukan.', '2026-04-28 09:52:46', 'dibaca'),
-(13, NULL, 'Alat dikembalikan: pengki oleh user, jumlah: 1', '2026-04-28 10:05:09', 'dibaca');
+(13, NULL, 'Alat dikembalikan: pengki oleh user, jumlah: 1', '2026-04-28 10:05:09', 'dibaca'),
+(14, NULL, 'Permintaan peminjaman baru: sapu oleh user, jumlah: 1. Menunggu approval.', '2026-04-28 10:55:21', 'dibaca'),
+(15, 2, 'Peminjaman alat sapu telah disetujui. Silakan ambil alat di tempat yang ditentukan.', '2026-04-28 10:55:42', 'dibaca'),
+(16, NULL, 'Permintaan peminjaman baru: Laptop oleh usro, jumlah: 1. Menunggu approval.', '2026-04-28 11:17:31', 'belum_dibaca'),
+(17, 2, 'Peminjaman alat Laptop telah disetujui. Silakan ambil alat di tempat yang ditentukan.', '2026-04-28 11:17:51', 'belum_dibaca'),
+(18, NULL, 'Permintaan peminjaman baru: Laptop oleh ujan, jumlah: 9. Menunggu approval.', '2026-04-28 11:19:10', 'belum_dibaca'),
+(19, 11, 'Peminjaman alat Laptop telah disetujui. Silakan ambil alat di tempat yang ditentukan.', '2026-04-28 11:19:57', 'belum_dibaca');
 
 -- --------------------------------------------------------
 
@@ -160,7 +166,10 @@ INSERT INTO `peminjaman` (`id_peminjam`, `id_user`, `id_alat`, `nama_peminjam`, 
 (61, 2, 38, 'user', 10, '2026-04-28', '2026-05-01', 'dikembalikan', 0),
 (62, 2, 36, 'user', 5, '2026-04-28', '2026-05-01', 'dikembalikan', 0),
 (63, 2, 40, 'user', 10, '2026-04-28', '2026-05-01', 'dikembalikan', 0),
-(64, 2, 38, 'user', 1, '2026-04-28', '2026-05-01', 'dikembalikan', 0);
+(64, 2, 38, 'user', 1, '2026-04-28', '2026-05-01', 'dikembalikan', 0),
+(65, 2, 36, 'user', 1, '2026-04-28', '2026-05-01', 'disetujui', 0),
+(66, 2, 44, 'usro', 1, '2026-04-28', '2026-05-01', 'disetujui', 0),
+(67, 11, 44, 'ujan', 9, '2026-04-28', '2026-05-01', 'disetujui', 0);
 
 -- --------------------------------------------------------
 
@@ -269,7 +278,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `id_alat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_alat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT untuk tabel `denda`
@@ -293,13 +302,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notifikasi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_notifikasi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengembalian`
